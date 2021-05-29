@@ -12,7 +12,7 @@ class GeneralHelper {
 
     // MARK: - Vars
     
-    var tabList: [TabItem] = []
+    var tabList: [TabItem] = [] 
         
     static let sharedInstance = GeneralHelper()
     
