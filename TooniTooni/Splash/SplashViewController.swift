@@ -10,7 +10,7 @@ import UIKit
 class SplashViewController: BaseViewController {
     
     // MARK: - Vars
-    
+
     // MARK: - Life Cycle
     
     func initBackgroundView() {
@@ -21,6 +21,7 @@ class SplashViewController: BaseViewController {
         super.viewDidLoad()
     
         self.initBackgroundView()
+        self.requestAnonymouslyLogin()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,4 +46,15 @@ extension SplashViewController {
         sceneDelegate.createTabVC()
     }
     
+}
+
+// MARK: - Login
+
+extension SplashViewController {
+
+  func requestAnonymouslyLogin() {
+    FirebaseService.shared.signInAnonymously { user in
+      debug(user.uid)
+    }
+  }
 }
