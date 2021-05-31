@@ -20,3 +20,16 @@ extension UIView {
     }
     
 }
+
+extension UILabel {
+
+    func changeColor(for site: String?) {
+        if site?.lowercased() == "naver" {
+          self.textColor = kNAVER_100
+        } else if site?.lowercased() == "daum" {
+          self.textColor = kDAUM_100
+        } else if site?.lowercased() == "kakao" {
+          self.textColor = kKAKAO_100
+        }
+    }
+}

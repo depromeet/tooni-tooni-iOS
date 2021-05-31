@@ -20,6 +20,7 @@ class GeneralHelper {
     
     func setup() {
         self.initTabList()
+        FirebaseService.shared.configure()
     }
 
 }

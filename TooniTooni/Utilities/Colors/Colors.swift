@@ -38,8 +38,8 @@ let kRED_500_HIGHLIGHT =                UIColor(named: "kRED_500_HIGHLIGHT")!
 let kBLUE_100 =                         UIColor(named: "kBLUE_100")!
 let kBLUE_100_HIGHLIGHT =               UIColor(named: "kBLUE_100_HIGHLIGHT")!
 
-let kGREEN_500 =                        UIColor(named: "kGREEN_500")!
-let kGREEN_500_HIGHLIGHT =              UIColor(named: "kGREEN_500_HIGHLIGHT")!
+let kGREEN_100 =                        UIColor(named: "kGREEN_100")!
+let kGREEN_100_HIGHLIGHT =              UIColor(named: "kGREEN_100_HIGHLIGHT")!
 
 let kYELLOW_500 =                       UIColor(named: "kYELLOW_500")!
 let kYELLOW_500_HIGHLIGHT =             UIColor(named: "kYELLOW_500_HIGHLIGHT")!

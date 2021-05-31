@@ -35,7 +35,7 @@ let kBODY1_BOLD =                           UIFont(name: CustomFont.bold.name, s
 let kBODY1_REGULAR =                        UIFont(name: CustomFont.regular.name, size: 16.0)
 
 let kBODY2_MEDIUM =                         UIFont(name: CustomFont.medium.name, size: 14.0)
-let kBODY2_REGULAR =                        UIFont(name: CustomFont.bold.name, size: 14.0)
+let kBODY2_REGULAR =                        UIFont(name: CustomFont.regular.name, size: 14.0)
 
 let kCAPTION1_MEDIUM =                      UIFont(name: CustomFont.medium.name, size: 12.0)
 let kCAPTION1_REGULAR =                     UIFont(name: CustomFont.regular.name, size: 12.0)

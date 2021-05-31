@@ -94,6 +94,30 @@
 		19CA7153265B79A70095BE24 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA7152265B79A70095BE24 /* Fonts.swift */; };
 		19CA7157265B7B4A0095BE24 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA7156265B7B4A0095BE24 /* Logger.swift */; };
 		19CA7159265B805A0095BE24 /* HomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA7158265B805A0095BE24 /* HomeItem.swift */; };
+		6BB5BDBE266216A400068DF8 /* DetailCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5BDBD2662169500068DF8 /* DetailCommentViewController.swift */; };
+		6BB5BDBF266216A600068DF8 /* DetailHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5BDBB2662169500068DF8 /* DetailHomeViewController.swift */; };
+		6BB5BDC0266216AA00068DF8 /* WebtoonDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5BDBC2662169500068DF8 /* WebtoonDetail.storyboard */; };
+		6BB5BDC1266216AD00068DF8 /* WebtoonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5BDBA2662169500068DF8 /* WebtoonDetailViewController.swift */; };
+		6BB5BDC5266216EB00068DF8 /* WebtoonDetailInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5BDC3266216E500068DF8 /* WebtoonDetailInfoCell.xib */; };
+		6BB5BDC6266216EF00068DF8 /* WebtoonDetailInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5BDC4266216E500068DF8 /* WebtoonDetailInfoCell.swift */; };
+		6BB5BDC92662173B00068DF8 /* WebtoonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5BDC72662173700068DF8 /* WebtoonDetail.swift */; };
+		6BB5BDCC2662179200068DF8 /* GeneralTitleRightDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5BDCB2662179200068DF8 /* GeneralTitleRightDetailHeaderView.swift */; };
+		6BB5BDCD2662179600068DF8 /* GeneralTitleRightDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5BDCA2662179100068DF8 /* GeneralTitleRightDetailHeaderView.xib */; };
+		6BB5BDD1266217DF00068DF8 /* WebtoonMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5BDCF266217D900068DF8 /* WebtoonMenuView.xib */; };
+		6BB5BDD2266217E200068DF8 /* WebtoonMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5BDD0266217D900068DF8 /* WebtoonMenuView.swift */; };
+		6BF8476226627FA300F122E8 /* WebtoonDetailGenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8476026627FA300F122E8 /* WebtoonDetailGenreCell.swift */; };
+		6BF8476326627FA300F122E8 /* WebtoonDetailGenreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8476126627FA300F122E8 /* WebtoonDetailGenreCell.xib */; };
+		6BF8476A2662A9DA00F122E8 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF847682662A9DA00F122E8 /* CommentCell.swift */; };
+		6BF8476B2662A9DA00F122E8 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BF847692662A9DA00F122E8 /* CommentCell.xib */; };
+		6BF8476D26632D0800F122E8 /* DetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8476C26632D0800F122E8 /* DetailWebViewController.swift */; };
+		6BF8476F26634F5400F122E8 /* CommentWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8476E26634F5400F122E8 /* CommentWritingView.swift */; };
+		6BF8477126634F6B00F122E8 /* CommentWritingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8477026634F6B00F122E8 /* CommentWritingView.xib */; };
+		6BF84782266515C900F122E8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6BF84781266515C900F122E8 /* FirebaseAnalytics */; };
+		6BF84784266515C900F122E8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6BF84783266515C900F122E8 /* FirebaseAuth */; };
+		6BF84786266515C900F122E8 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6BF84785266515C900F122E8 /* FirebaseCrashlytics */; };
+		6BF847882665168F00F122E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BF847872665168F00F122E8 /* GoogleService-Info.plist */; };
+		6BF8478B2665176E00F122E8 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8478A2665176E00F122E8 /* FirebaseService.swift */; };
+		6BF8478D266517AF00F122E8 /* FirebaseService+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8478C266517AF00F122E8 /* FirebaseService+Auth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -183,6 +207,27 @@
 		19CA7152265B79A70095BE24 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		19CA7156265B7B4A0095BE24 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		19CA7158265B805A0095BE24 /* HomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItem.swift; sourceTree = "<group>"; };
+		6BB5BDBA2662169500068DF8 /* WebtoonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonDetailViewController.swift; sourceTree = "<group>"; };
+		6BB5BDBB2662169500068DF8 /* DetailHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHomeViewController.swift; sourceTree = "<group>"; };
+		6BB5BDBC2662169500068DF8 /* WebtoonDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebtoonDetail.storyboard; sourceTree = "<group>"; };
+		6BB5BDBD2662169500068DF8 /* DetailCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCommentViewController.swift; sourceTree = "<group>"; };
+		6BB5BDC3266216E500068DF8 /* WebtoonDetailInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebtoonDetailInfoCell.xib; sourceTree = "<group>"; };
+		6BB5BDC4266216E500068DF8 /* WebtoonDetailInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonDetailInfoCell.swift; sourceTree = "<group>"; };
+		6BB5BDC72662173700068DF8 /* WebtoonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonDetail.swift; sourceTree = "<group>"; };
+		6BB5BDCA2662179100068DF8 /* GeneralTitleRightDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralTitleRightDetailHeaderView.xib; sourceTree = "<group>"; };
+		6BB5BDCB2662179200068DF8 /* GeneralTitleRightDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTitleRightDetailHeaderView.swift; sourceTree = "<group>"; };
+		6BB5BDCF266217D900068DF8 /* WebtoonMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebtoonMenuView.xib; sourceTree = "<group>"; };
+		6BB5BDD0266217D900068DF8 /* WebtoonMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonMenuView.swift; sourceTree = "<group>"; };
+		6BF8476026627FA300F122E8 /* WebtoonDetailGenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonDetailGenreCell.swift; sourceTree = "<group>"; };
+		6BF8476126627FA300F122E8 /* WebtoonDetailGenreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebtoonDetailGenreCell.xib; sourceTree = "<group>"; };
+		6BF847682662A9DA00F122E8 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		6BF847692662A9DA00F122E8 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		6BF8476C26632D0800F122E8 /* DetailWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWebViewController.swift; sourceTree = "<group>"; };
+		6BF8476E26634F5400F122E8 /* CommentWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWritingView.swift; sourceTree = "<group>"; };
+		6BF8477026634F6B00F122E8 /* CommentWritingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentWritingView.xib; sourceTree = "<group>"; };
+		6BF847872665168F00F122E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6BF8478A2665176E00F122E8 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		6BF8478C266517AF00F122E8 /* FirebaseService+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseService+Auth.swift"; sourceTree = "<group>"; };
 		DCB1D1CF57D86EDE346198F6 /* Pods_TooniTooni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TooniTooni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -192,7 +237,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				19CA711B265B69B90095BE24 /* Kingfisher in Frameworks */,
+				6BF84784266515C900F122E8 /* FirebaseAuth in Frameworks */,
 				19CA7118265B68D20095BE24 /* Moya in Frameworks */,
+				6BF84786266515C900F122E8 /* FirebaseCrashlytics in Frameworks */,
+				6BF84782266515C900F122E8 /* FirebaseAnalytics in Frameworks */,
 				19CA714D265B706B0095BE24 /* NVActivityIndicatorView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +260,7 @@
 		194D7A412625462B00BEEF1C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6BB5BDCE266217D900068DF8 /* WebtoonDetail */,
 				19BFA52B2637B61100C6B82E /* Week */,
 				194D7A422625462F00BEEF1C /* General */,
 			);
@@ -231,6 +280,8 @@
 				19BFA59526380F3100C6B82E /* GeneralGenreView.xib */,
 				19BFA580263807AB00C6B82E /* GeneralTitleHeaderView.swift */,
 				19BFA583263807B200C6B82E /* GeneralTitleHeaderView.xib */,
+				6BB5BDCB2662179200068DF8 /* GeneralTitleRightDetailHeaderView.swift */,
+				6BB5BDCA2662179100068DF8 /* GeneralTitleRightDetailHeaderView.xib */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -255,6 +306,7 @@
 		19B1B468262425760016F195 /* TooniTooni */ = {
 			isa = PBXGroup;
 			children = (
+				6BF847892665175B00F122E8 /* Services */,
 				19CA7136265B6D9D0095BE24 /* Network */,
 				19BFA5362637C9D500C6B82E /* Cells */,
 				194D7A412625462B00BEEF1C /* Views */,
@@ -268,10 +320,12 @@
 				194D7A34262543AC00BEEF1C /* Splash */,
 				19B1B4AE2624289E0016F195 /* Home */,
 				19B1B4AD262428950016F195 /* Week */,
+				6BB5BDB9266215E900068DF8 /* Webtoon Detail */,
 				19B1B4AC2624288E0016F195 /* Favorite */,
 				19B1B4AB262428830016F195 /* Settings */,
 				19B1B472262425770016F195 /* Assets.xcassets */,
 				19B1B474262425770016F195 /* LaunchScreen.storyboard */,
+				6BF847872665168F00F122E8 /* GoogleService-Info.plist */,
 				19B1B477262425770016F195 /* Info.plist */,
 				19CA7129265B6ACC0095BE24 /* Utilities */,
 				19B1B47E2624258D0016F195 /* Base */,
@@ -296,6 +350,7 @@
 				19B1B489262425DB0016F195 /* TabItem.swift */,
 				19CA7158265B805A0095BE24 /* HomeItem.swift */,
 				19BFA5532637DBF200C6B82E /* WebtoonItem.swift */,
+				6BB5BDC72662173700068DF8 /* WebtoonDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -364,6 +419,7 @@
 			children = (
 				19BFA5602637FBFB00C6B82E /* Home */,
 				19BFA5372637C9DA00C6B82E /* Week */,
+				6BB5BDC2266216E500068DF8 /* WebtoonDetail */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -493,6 +549,51 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		6BB5BDB9266215E900068DF8 /* Webtoon Detail */ = {
+			isa = PBXGroup;
+			children = (
+				6BF8476C26632D0800F122E8 /* DetailWebViewController.swift */,
+				6BB5BDBD2662169500068DF8 /* DetailCommentViewController.swift */,
+				6BB5BDBB2662169500068DF8 /* DetailHomeViewController.swift */,
+				6BB5BDBA2662169500068DF8 /* WebtoonDetailViewController.swift */,
+				6BB5BDBC2662169500068DF8 /* WebtoonDetail.storyboard */,
+			);
+			path = "Webtoon Detail";
+			sourceTree = "<group>";
+		};
+		6BB5BDC2266216E500068DF8 /* WebtoonDetail */ = {
+			isa = PBXGroup;
+			children = (
+				6BB5BDC3266216E500068DF8 /* WebtoonDetailInfoCell.xib */,
+				6BB5BDC4266216E500068DF8 /* WebtoonDetailInfoCell.swift */,
+				6BF8476026627FA300F122E8 /* WebtoonDetailGenreCell.swift */,
+				6BF8476126627FA300F122E8 /* WebtoonDetailGenreCell.xib */,
+				6BF847682662A9DA00F122E8 /* CommentCell.swift */,
+				6BF847692662A9DA00F122E8 /* CommentCell.xib */,
+			);
+			path = WebtoonDetail;
+			sourceTree = "<group>";
+		};
+		6BB5BDCE266217D900068DF8 /* WebtoonDetail */ = {
+			isa = PBXGroup;
+			children = (
+				6BB5BDCF266217D900068DF8 /* WebtoonMenuView.xib */,
+				6BB5BDD0266217D900068DF8 /* WebtoonMenuView.swift */,
+				6BF8476E26634F5400F122E8 /* CommentWritingView.swift */,
+				6BF8477026634F6B00F122E8 /* CommentWritingView.xib */,
+			);
+			path = WebtoonDetail;
+			sourceTree = "<group>";
+		};
+		6BF847892665175B00F122E8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6BF8478A2665176E00F122E8 /* FirebaseService.swift */,
+				6BF8478C266517AF00F122E8 /* FirebaseService+Auth.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		C13235123DB2C5C93B6A4429 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +622,9 @@
 				19CA7117265B68D20095BE24 /* Moya */,
 				19CA711A265B69B90095BE24 /* Kingfisher */,
 				19CA714C265B706B0095BE24 /* NVActivityIndicatorView */,
+				6BF84781266515C900F122E8 /* FirebaseAnalytics */,
+				6BF84783266515C900F122E8 /* FirebaseAuth */,
+				6BF84785266515C900F122E8 /* FirebaseCrashlytics */,
 			);
 			productName = TooniTooni;
 			productReference = 19B1B466262425760016F195 /* TooniTooni.app */;
@@ -553,6 +657,7 @@
 				19CA7116265B68D20095BE24 /* XCRemoteSwiftPackageReference "Moya" */,
 				19CA7119265B69B90095BE24 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				19CA714B265B706B0095BE24 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				6BF84780266515C900F122E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 19B1B467262425760016F195 /* Products */;
 			projectDirPath = "";
@@ -568,8 +673,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BB5BDC0266216AA00068DF8 /* WebtoonDetail.storyboard in Resources */,
 				19B1B476262425770016F195 /* LaunchScreen.storyboard in Resources */,
 				19BFA59626380F3100C6B82E /* GeneralGenreView.xib in Resources */,
+				6BF8476B2662A9DA00F122E8 /* CommentCell.xib in Resources */,
+				6BB5BDC5266216EB00068DF8 /* WebtoonDetailInfoCell.xib in Resources */,
+				6BF8477126634F6B00F122E8 /* CommentWritingView.xib in Resources */,
 				19B1B483262425A20016F195 /* Base.storyboard in Resources */,
 				19CA7120265B69CA0095BE24 /* NotoSansKR-Bold.otf in Resources */,
 				19BFA54B2637D99100C6B82E /* WeekWebtoonCell.xib in Resources */,
@@ -583,11 +692,14 @@
 				19BFA58A26380A3400C6B82E /* HomePopularCell.xib in Resources */,
 				19BFA5312637B62300C6B82E /* WeekMenuView.xib in Resources */,
 				19CA7151265B707F0095BE24 /* GeneralActivity.xib in Resources */,
+				6BB5BDCD2662179600068DF8 /* GeneralTitleRightDetailHeaderView.xib in Resources */,
+				6BB5BDD1266217DF00068DF8 /* WebtoonMenuView.xib in Resources */,
 				194D7A462625464300BEEF1C /* GeneralNavigationView.xib in Resources */,
 				19CA5FA7264F595900A5DC76 /* Color.xcassets in Resources */,
 				19B1B473262425770016F195 /* Assets.xcassets in Resources */,
 				19BFA5512637DA2700C6B82E /* GeneralBadgeView.xib in Resources */,
 				19BFA5662637FC0C00C6B82E /* HomeNoticeCell.xib in Resources */,
+				6BF847882665168F00F122E8 /* GoogleService-Info.plist in Resources */,
 				19B1B471262425760016F195 /* Home.storyboard in Resources */,
 				19B1B4A6262428770016F195 /* Settings.storyboard in Resources */,
 				19BFA59C2638163700C6B82E /* HomeAuthorListCell.xib in Resources */,
@@ -597,6 +709,7 @@
 				19CA5FB7264F7A8A00A5DC76 /* HomeGenreCell.xib in Resources */,
 				19BFA584263807B200C6B82E /* GeneralTitleHeaderView.xib in Resources */,
 				19BFA57E2638053700C6B82E /* HomeWebtoonCell.xib in Resources */,
+				6BF8476326627FA300F122E8 /* WebtoonDetailGenreCell.xib in Resources */,
 				19BFA5A22638165900C6B82E /* HomeAuthorCell.xib in Resources */,
 				19CA7122265B69CA0095BE24 /* NotoSansKR-Regular.otf in Resources */,
 			);
@@ -613,32 +726,42 @@
 				19B1B46E262425760016F195 /* HomeViewController.swift in Sources */,
 				19CA7150265B707F0095BE24 /* GeneralActivity.swift in Sources */,
 				19BFA5622637FC0600C6B82E /* HomeNoticeCell.swift in Sources */,
+				6BB5BDC1266216AD00068DF8 /* WebtoonDetailViewController.swift in Sources */,
+				6BF8476F26634F5400F122E8 /* CommentWritingView.swift in Sources */,
 				19CA7147265B6DC00095BE24 /* ErrorModel.swift in Sources */,
 				19BFA53A2637CA3A00C6B82E /* WeekMenuCell.swift in Sources */,
 				19BFA58726380A2F00C6B82E /* HomePopularCell.swift in Sources */,
 				19CA5FB1264F78BE00A5DC76 /* HomeGenreListCell.swift in Sources */,
+				6BB5BDCC2662179200068DF8 /* GeneralTitleRightDetailHeaderView.swift in Sources */,
 				19B1B46A262425760016F195 /* AppDelegate.swift in Sources */,
 				19CA713D265B6DAE0095BE24 /* NetworkLoggerPlugin.swift in Sources */,
 				19CA713F265B6DAE0095BE24 /* AlamofireSession.swift in Sources */,
+				6BB5BDBF266216A600068DF8 /* DetailHomeViewController.swift in Sources */,
 				19B1B48A262425DB0016F195 /* TabItem.swift in Sources */,
+				6BF8476226627FA300F122E8 /* WebtoonDetailGenreCell.swift in Sources */,
 				19BFA59326380F2C00C6B82E /* GeneralGenreView.swift in Sources */,
 				194D7A452625464300BEEF1C /* GeneralNavigationView.swift in Sources */,
 				19CA5FB5264F7A8400A5DC76 /* HomeGenreCell.swift in Sources */,
 				19B1B485262425A20016F195 /* BaseTabBarViewController.swift in Sources */,
 				19CA7157265B7B4A0095BE24 /* Logger.swift in Sources */,
+				6BF8476D26632D0800F122E8 /* DetailWebViewController.swift in Sources */,
 				194D7A39262543BB00BEEF1C /* SplashViewController.swift in Sources */,
 				19BFA59F2638165500C6B82E /* HomeAuthorCell.swift in Sources */,
 				19BFA5992638163100C6B82E /* HomeAuthorListCell.swift in Sources */,
 				19BFA5542637DBF200C6B82E /* WebtoonItem.swift in Sources */,
 				19B1B46C262425760016F195 /* SceneDelegate.swift in Sources */,
 				19BFA57B2638053100C6B82E /* HomeWebtoonCell.swift in Sources */,
+				6BF8476A2662A9DA00F122E8 /* CommentCell.swift in Sources */,
+				6BF8478D266517AF00F122E8 /* FirebaseService+Auth.swift in Sources */,
 				19CA5FA5264F56F700A5DC76 /* ServerHelper.swift in Sources */,
 				19BFA581263807AB00C6B82E /* GeneralTitleHeaderView.swift in Sources */,
+				6BB5BDC92662173B00068DF8 /* WebtoonDetail.swift in Sources */,
 				19CA7141265B6DAE0095BE24 /* NetworkStatusCode.swift in Sources */,
 				19BFA54E2637DA2200C6B82E /* GeneralBadgeView.swift in Sources */,
 				19CA7128265B6A770095BE24 /* ViewExtensions.swift in Sources */,
 				19CA5FAF264F625E00A5DC76 /* StringExtensions.swift in Sources */,
 				19CA7159265B805A0095BE24 /* HomeItem.swift in Sources */,
+				6BB5BDC6266216EF00068DF8 /* WebtoonDetailInfoCell.swift in Sources */,
 				19B1B493262426800016F195 /* ImageExtensions.swift in Sources */,
 				19CA7140265B6DAE0095BE24 /* NetworkService.swift in Sources */,
 				19BFA5692637FE0800C6B82E /* HomeNewListCell.swift in Sources */,
@@ -646,6 +769,7 @@
 				19BFA56F2637FF2200C6B82E /* HomeNewCell.swift in Sources */,
 				19CA7146265B6DC00095BE24 /* CommonResponse.swift in Sources */,
 				19CA5FA9264F59DF00A5DC76 /* Colors.swift in Sources */,
+				6BF8478B2665176E00F122E8 /* FirebaseService.swift in Sources */,
 				19CA714A265B6DC50095BE24 /* TooniRouter.swift in Sources */,
 				19BFA58D26380ECC00C6B82E /* HomeDriveCell.swift in Sources */,
 				19BFA52D2637B61D00C6B82E /* WeekMenuView.swift in Sources */,
@@ -654,6 +778,8 @@
 				19CA713E265B6DAE0095BE24 /* NetworkDataResponse.swift in Sources */,
 				19BFA575263804D900C6B82E /* HomeWebtoonListCell.swift in Sources */,
 				19B1B486262425A20016F195 /* BaseViewController.swift in Sources */,
+				6BB5BDD2266217E200068DF8 /* WebtoonMenuView.swift in Sources */,
+				6BB5BDBE266216A400068DF8 /* DetailCommentViewController.swift in Sources */,
 				19B1B496262426AF0016F195 /* GeneralHelper.swift in Sources */,
 				19B1B49A2624285D0016F195 /* WeekViewController.swift in Sources */,
 				19B1B4A9262428800016F195 /* SettingsViewController.swift in Sources */,
@@ -816,6 +942,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.genetory.TooniTooni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -836,6 +963,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.genetory.TooniTooni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -891,6 +1019,14 @@
 				minimumVersion = 5.1.1;
 			};
 		};
+		6BF84780266515C900F122E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -908,6 +1044,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 19CA714B265B706B0095BE24 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
+		};
+		6BF84781266515C900F122E8 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BF84780266515C900F122E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		6BF84783266515C900F122E8 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BF84780266515C900F122E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		6BF84785266515C900F122E8 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BF84780266515C900F122E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

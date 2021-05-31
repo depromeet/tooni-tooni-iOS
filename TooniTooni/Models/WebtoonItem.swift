@@ -23,7 +23,7 @@ struct Author: Codable {
 }
 
 struct Webtoon: Codable {
-    var id: Int?
+    var id: Int
     var site: String?
     var title: String?
     var authors: [Author]?
@@ -33,5 +33,8 @@ struct Webtoon: Codable {
     var genres: [String]?
     var score: Double?
     var isComplete: Bool?
+    var url: String?
+    var weekday: [String]?
+    var summary: String?
 }
 
