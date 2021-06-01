@@ -14,6 +14,7 @@ class BaseViewController: UIViewController {
     var showBigTitle = true
     var tabItem: TabItem?
     var pageIdx = 0
+    var isDarkStatusBarStyle = false
             
     // MARK: - Life Cycle
         
@@ -121,4 +122,19 @@ extension BaseViewController {
         self.showAlertWithTitle(vc: vc, title: nil, message: "준비중")
     }
     
+}
+
+// MARK: - Status bar
+
+extension BaseViewController {
+
+  func statusBarEnterLightContent() {
+    isDarkStatusBarStyle = false
+    setNeedsStatusBarAppearanceUpdate()
+  }
+
+  func statusBarEnterDarkContent() {
+    isDarkStatusBarStyle = true
+    setNeedsStatusBarAppearanceUpdate()
+  }
 }

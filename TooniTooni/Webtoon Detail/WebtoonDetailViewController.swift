@@ -57,6 +57,14 @@ class WebtoonDetailViewController: BaseViewController {
     GeneralHelper.sharedInstance.makeVC("WebtoonDetail", "DetailCommentViewController")
   ]
 
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    if isDarkStatusBarStyle {
+      return .darkContent
+    } else {
+      return .lightContent
+    }
+  }
+
   // MARK: - Life Cycle
 
   func initVars() {
@@ -142,6 +150,7 @@ class WebtoonDetailViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    statusBarEnterLightContent()
     initVars()
     initStatusBarView()
     initNavigationView()
@@ -171,7 +180,6 @@ extension WebtoonDetailViewController {
 
   private func didScrollAnimating(with scrollView: UIScrollView) {
     webtoonMenuViewTopConstraint.constant -= scrollView.contentOffset.y
-
     if webtoonMenuViewTopConstraint.constant <= .zero {
       webtoonMenuViewTopConstraint.constant = .zero
       updateUIDidScroll(isTop: true)
@@ -185,6 +193,7 @@ extension WebtoonDetailViewController {
 
   private func updateUIDidScroll(isTop: Bool) {
     if isTop {
+      statusBarEnterDarkContent()
       statusBarView.backgroundColor = kWHITE
       navigationView.bgColor(.white)
       navigationView.leftButton.setImage(
@@ -192,6 +201,7 @@ extension WebtoonDetailViewController {
         for: .normal
       )
     } else {
+      statusBarEnterLightContent()
       statusBarView.backgroundColor = kGRAY_80
       navigationView.bgColor(.clear)
       navigationView.leftButton.setImage(

@@ -49,7 +49,7 @@ class DetailWebViewController: BaseViewController {
     initNavigationView()
     initWebView()
     initActivity()
-  }g
+  }
 }
 
 // MARK: - Event

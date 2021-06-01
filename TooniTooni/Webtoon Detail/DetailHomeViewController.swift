@@ -39,13 +39,14 @@ class DetailHomeViewController: BaseViewController {
     static let headerHeight: CGFloat = 94
     static let menuViewHeight: CGFloat = 50
     static let webtoonUrlButton: CGFloat = 76
+    static let webtoonURLButtonBottomConstraints: CGFloat = 44
   }
 
   // MARK: - Vars
 
-  @IBOutlet var mainTableView: UITableView!
-  @IBOutlet var activity: GeneralActivity!
-  @IBOutlet var webtoonURLButton: UIButton!
+  @IBOutlet weak var mainTableView: UITableView!
+  @IBOutlet weak var activity: GeneralActivity!
+  @IBOutlet weak var webtoonURLButton: UIButton!
 
   var didScroll: ((_ scrollView: UIScrollView) -> Void)?
   var didTapToalComment: ((UIButton) -> Void)?
@@ -86,6 +87,7 @@ class DetailHomeViewController: BaseViewController {
     mainTableView.estimatedRowHeight = 200.0
     mainTableView.showsHorizontalScrollIndicator = false
     mainTableView.showsVerticalScrollIndicator = false
+    mainTableView.contentInset.bottom += webtoonURLButton.frame.height
   }
 
   func initWebToonURLButton() {

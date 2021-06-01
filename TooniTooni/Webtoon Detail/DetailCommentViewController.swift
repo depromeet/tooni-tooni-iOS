@@ -14,15 +14,21 @@ class DetailCommentViewController: BaseViewController {
   private enum Metric {
     static let maxMenuViewTopConstraint: CGFloat = 114
     static let bottomConstraints: CGFloat = 20
+    static let inputViewContentSizeMaxHeight: CGFloat = 80
+    static let headerHeight: CGFloat = 32
   }
 
   // MARK: - Vars
 
-  @IBOutlet weak var mainTableView: UITableView!
-  @IBOutlet weak var activity: GeneralActivity!
-  @IBOutlet weak var commentWritingView: CommentWritingView!
-  @IBOutlet weak var commentWritingViewBottomConstraints: NSLayoutConstraint!
+  @IBOutlet var mainTableView: UITableView!
+  @IBOutlet var activity: GeneralActivity!
+  @IBOutlet var inputViewContainer: UIView!
+  @IBOutlet var inputViewContainerBottomConstraints: NSLayoutConstraint!
+  @IBOutlet var inputTextView: UITextView!
+  @IBOutlet var inputTextViewHeightConstraints: NSLayoutConstraint!
+  @IBOutlet var sendButton: UIButton!
 
+  let placeholder = "투니의 의견을 작성해주세요 :)"
   var didScroll: ((_ scrollView: UIScrollView) -> Void)?
   var webtoon: Webtoon?
   var webtoonDetail: WebtoonDetail? {
@@ -52,11 +58,31 @@ class DetailCommentViewController: BaseViewController {
     mainTableView.showsHorizontalScrollIndicator = false
     mainTableView.showsVerticalScrollIndicator = false
     mainTableView.keyboardDismissMode = .onDrag
-    mainTableView.contentInset.bottom += Metric.maxMenuViewTopConstraint
+  }
+
+  func initInputTextView() {
+    inputTextView.delegate = self
+
+    if inputTextView.text == placeholder {
+      inputTextView.text = ""
+      inputTextView.textColor = kGRAY_80
+    } else if inputTextView.text == "" {
+      inputTextView.text = placeholder
+      inputTextView.textColor = kGRAY_50
+    }
+  }
+
+  func initSendButton() {
+    if !isEmpty(inputTextView) {
+      sendButton.backgroundColor = kGRAY_80
+      sendButton.tintColor = kWHITE
+    } else {
+      sendButton.backgroundColor = kGRAY_10
+      sendButton.tintColor = kBLACK
+    }
   }
 
   func keyboardObserver() {
-
     NotificationCenter.default.addObserver(
       self,
       selector: #selector(textViewMoveUp),
@@ -73,7 +99,6 @@ class DetailCommentViewController: BaseViewController {
   }
 
   func removeObserver() {
-
     NotificationCenter.default.removeObserver(
       self,
       name: UIResponder.keyboardWillShowNotification,
@@ -89,8 +114,11 @@ class DetailCommentViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    initSwipePop()
     initVars()
     initTableView()
+    initInputTextView()
+    initSendButton()
     keyboardObserver()
 
     startActivity()
@@ -102,7 +130,7 @@ class DetailCommentViewController: BaseViewController {
   }
 }
 
-// MARK: - Event {
+// MARK: - Event
 
 extension DetailCommentViewController {
 
@@ -110,7 +138,7 @@ extension DetailCommentViewController {
   func textViewMoveUp(_ notification: NSNotification) {
     if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
       UIView.animate(withDuration: 0.25, animations: {
-        self.commentWritingViewBottomConstraints.constant = keyboardSize.height
+        self.inputViewContainerBottomConstraints.constant = keyboardSize.height
       })
     }
   }
@@ -118,7 +146,7 @@ extension DetailCommentViewController {
   @objc
   func textViewMoveDown(_ notification: NSNotification) {
     UIView.animate(withDuration: 0.25, animations: {
-      self.commentWritingViewBottomConstraints.constant = Metric.bottomConstraints
+      self.inputViewContainerBottomConstraints.constant = Metric.bottomConstraints
     })
   }
 }
@@ -138,6 +166,15 @@ extension DetailCommentViewController {
         print(response)
       }
     }
+  }
+
+  func isEmpty(_ textView: UITextView) -> Bool {
+    guard let text = textView.text,
+          !text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty else {
+      return false
+    }
+
+    return true
   }
 }
 
@@ -169,6 +206,41 @@ extension DetailCommentViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
   }
+
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return Metric.headerHeight
+  }
+}
+
+// MARK: - UITextView
+
+extension DetailCommentViewController: UITextViewDelegate {
+
+  func textViewDidBeginEditing(_ textView: UITextView) {
+    initInputTextView()
+  }
+
+  func textViewDidEndEditing(_ textView: UITextView) {
+    if textView.text == "" {
+      initInputTextView()
+    }
+  }
+
+  func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    initSendButton()
+
+    if text == "\n" {
+      textView.resignFirstResponder()
+    }
+
+    return true
+  }
+
+  func textViewDidChange(_ textView: UITextView) {
+    guard textView.contentSize.height <= Metric.inputViewContentSizeMaxHeight else { return }
+
+    inputTextViewHeightConstraints.constant = textView.contentSize.height
+  }
 }
 
 // MARK: - Activity
@@ -183,5 +255,19 @@ extension DetailCommentViewController {
   func stopActivity() {
     if !activity.isAnimating() { return }
     activity.stop()
+  }
+}
+
+// MARK: - Gestrue recognizer
+
+extension DetailCommentViewController: UIGestureRecognizerDelegate {
+
+  func initSwipePop() {
+    navigationController?.interactivePopGestureRecognizer?.delegate = self
+    navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+  }
+
+  func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    return true
   }
 }
