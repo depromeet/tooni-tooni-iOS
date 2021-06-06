@@ -15,6 +15,7 @@ class WebtoonRandomListCell: UITableViewCell {
     @IBOutlet weak var mainCollectionView: UICollectionView!
 
     var webtoonList: [Webtoon] = []
+    var didTapCell: ((Webtoon) -> Void)?
 
     // MARK: - Life Cycle
 
@@ -96,6 +97,8 @@ extension WebtoonRandomListCell: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
 
+        let webtoonItem = self.webtoonList[indexPath.row]
+        didTapCell?(webtoonItem)
     }
 
 }

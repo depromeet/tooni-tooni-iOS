@@ -199,6 +199,15 @@ extension DetailHomeViewController: UITableViewDataSource {
         if let webtoonDetail = webtoonDetail {
           let webtoons = webtoonDetail.randomRecommendWebtoons
           cell.bind(webtoons)
+
+          cell.didTapCell = { webtoon in
+            if let vc = GeneralHelper.sharedInstance.makeVC("WebtoonDetail", "WebtoonDetailViewController") as? WebtoonDetailViewController {
+              vc.webtoon = webtoon
+
+              vc.hidesBottomBarWhenPushed = true
+              self.navigationController?.pushViewController(vc, animated: true)
+            }
+          }
         }
 
         return cell
