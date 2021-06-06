@@ -14,3 +14,8 @@ let kDEVICE_HEIGHT: CGFloat =                       UIScreen.main.bounds.size.he
 
 let kDEVICE_TOP_AREA: CGFloat =                     UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0
 let kDEVICE_BOTTOM_AREA: CGFloat =                  UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.safeAreaInsets.bottom ?? 0.0
+
+// MARK: - UserDefaults Keys
+
+let kUD_TOKEN: String = "UD_TOKEN"
+let kUD_NICKNAME: String = "UD_NICKNAME"

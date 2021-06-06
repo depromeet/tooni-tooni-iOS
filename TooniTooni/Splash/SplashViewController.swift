@@ -27,7 +27,7 @@ class SplashViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.startApp()
+        //self.startApp()
     }
     
 }
@@ -53,8 +53,19 @@ extension SplashViewController {
 extension SplashViewController {
 
   func requestAnonymouslyLogin() {
+//    guard let nickname = UserDefaults.standard.string(forKey: kUD_NICKNAME),
+//          nickname.isEmpty else { return }
+
     FirebaseService.shared.signInAnonymously { user in
       debug(user.uid)
+      UserDefaults.standard.setValue(user.uid, forKey: kUD_TOKEN)
+
+      TooniNetworkService.shared.request(to: .login(user.uid), decoder: Login.self) { [weak self] response in
+        guard let login = response.json as? Login else { return }
+        UserDefaults.standard.setValue(login.nickname, forKey: kUD_NICKNAME)
+
+        self?.startApp()
+      }
     }
   }
 }
