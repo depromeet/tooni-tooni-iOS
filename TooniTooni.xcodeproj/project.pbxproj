@@ -94,6 +94,10 @@
 		19CA7153265B79A70095BE24 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA7152265B79A70095BE24 /* Fonts.swift */; };
 		19CA7157265B7B4A0095BE24 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA7156265B7B4A0095BE24 /* Logger.swift */; };
 		19CA7159265B805A0095BE24 /* HomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA7158265B805A0095BE24 /* HomeItem.swift */; };
+		6B28FA93266A78D20035E191 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28FA92266A78D20035E191 /* Login.swift */; };
+		6B28FA99266CE4CB0035E191 /* WebtoonRandomListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28FA97266CE4CB0035E191 /* WebtoonRandomListCell.swift */; };
+		6B28FA9A266CE4CB0035E191 /* WebtoonRandomListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B28FA98266CE4CB0035E191 /* WebtoonRandomListCell.xib */; };
+		6B28FA9C266D246E0035E191 /* CommentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28FA9B266D246E0035E191 /* CommentItem.swift */; };
 		6BB5BDBE266216A400068DF8 /* DetailCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5BDBD2662169500068DF8 /* DetailCommentViewController.swift */; };
 		6BB5BDBF266216A600068DF8 /* DetailHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5BDBB2662169500068DF8 /* DetailHomeViewController.swift */; };
 		6BB5BDC0266216AA00068DF8 /* WebtoonDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5BDBC2662169500068DF8 /* WebtoonDetail.storyboard */; };
@@ -205,6 +209,10 @@
 		19CA7152265B79A70095BE24 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		19CA7156265B7B4A0095BE24 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		19CA7158265B805A0095BE24 /* HomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItem.swift; sourceTree = "<group>"; };
+		6B28FA92266A78D20035E191 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		6B28FA97266CE4CB0035E191 /* WebtoonRandomListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonRandomListCell.swift; sourceTree = "<group>"; };
+		6B28FA98266CE4CB0035E191 /* WebtoonRandomListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebtoonRandomListCell.xib; sourceTree = "<group>"; };
+		6B28FA9B266D246E0035E191 /* CommentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItem.swift; sourceTree = "<group>"; };
 		6BB5BDBA2662169500068DF8 /* WebtoonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonDetailViewController.swift; sourceTree = "<group>"; };
 		6BB5BDBB2662169500068DF8 /* DetailHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHomeViewController.swift; sourceTree = "<group>"; };
 		6BB5BDBC2662169500068DF8 /* WebtoonDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebtoonDetail.storyboard; sourceTree = "<group>"; };
@@ -346,6 +354,8 @@
 				19CA7158265B805A0095BE24 /* HomeItem.swift */,
 				19BFA5532637DBF200C6B82E /* WebtoonItem.swift */,
 				6BB5BDC72662173700068DF8 /* WebtoonDetail.swift */,
+				6B28FA92266A78D20035E191 /* Login.swift */,
+				6B28FA9B266D246E0035E191 /* CommentItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -566,6 +576,8 @@
 				6BF8476126627FA300F122E8 /* WebtoonDetailGenreCell.xib */,
 				6BF847682662A9DA00F122E8 /* CommentCell.swift */,
 				6BF847692662A9DA00F122E8 /* CommentCell.xib */,
+				6B28FA97266CE4CB0035E191 /* WebtoonRandomListCell.swift */,
+				6B28FA98266CE4CB0035E191 /* WebtoonRandomListCell.xib */,
 			);
 			path = WebtoonDetail;
 			sourceTree = "<group>";
@@ -674,6 +686,7 @@
 				6BB5BDC5266216EB00068DF8 /* WebtoonDetailInfoCell.xib in Resources */,
 				19B1B483262425A20016F195 /* Base.storyboard in Resources */,
 				19CA7120265B69CA0095BE24 /* NotoSansKR-Bold.otf in Resources */,
+				6B28FA9A266CE4CB0035E191 /* WebtoonRandomListCell.xib in Resources */,
 				19BFA54B2637D99100C6B82E /* WeekWebtoonCell.xib in Resources */,
 				19BFA5722637FF2700C6B82E /* HomeNewCell.xib in Resources */,
 				19B1B4A3262428710016F195 /* Favorite.storyboard in Resources */,
@@ -724,6 +737,7 @@
 				19BFA53A2637CA3A00C6B82E /* WeekMenuCell.swift in Sources */,
 				19BFA58726380A2F00C6B82E /* HomePopularCell.swift in Sources */,
 				19CA5FB1264F78BE00A5DC76 /* HomeGenreListCell.swift in Sources */,
+				6B28FA93266A78D20035E191 /* Login.swift in Sources */,
 				6BB5BDCC2662179200068DF8 /* GeneralTitleRightDetailHeaderView.swift in Sources */,
 				19B1B46A262425760016F195 /* AppDelegate.swift in Sources */,
 				19CA713D265B6DAE0095BE24 /* NetworkLoggerPlugin.swift in Sources */,
@@ -763,6 +777,8 @@
 				19CA5FA9264F59DF00A5DC76 /* Colors.swift in Sources */,
 				6BF8478B2665176E00F122E8 /* FirebaseService.swift in Sources */,
 				19CA714A265B6DC50095BE24 /* TooniRouter.swift in Sources */,
+				6B28FA99266CE4CB0035E191 /* WebtoonRandomListCell.swift in Sources */,
+				6B28FA9C266D246E0035E191 /* CommentItem.swift in Sources */,
 				19BFA58D26380ECC00C6B82E /* HomeDriveCell.swift in Sources */,
 				19BFA52D2637B61D00C6B82E /* WeekMenuView.swift in Sources */,
 				19BFA5412637D76E00C6B82E /* WeekListViewController.swift in Sources */,
@@ -926,8 +942,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CNMQE42DQF;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = QGFZCPYLU4;
 				INFOPLIST_FILE = TooniTooni/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -937,6 +954,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinShine.TooniTooni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS Wildcard Provisioning";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -947,8 +965,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CNMQE42DQF;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = QGFZCPYLU4;
 				INFOPLIST_FILE = TooniTooni/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -958,6 +977,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinShine.TooniTooni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS Wildcard Provisioning";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

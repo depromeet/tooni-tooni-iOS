@@ -18,6 +18,8 @@ class DetailCommentViewController: BaseViewController {
     static let headerHeight: CGFloat = 32
   }
 
+  let placeholder = "투니의 의견을 작성해주세요 :)"
+
   // MARK: - Vars
 
   @IBOutlet var mainTableView: UITableView!
@@ -28,10 +30,10 @@ class DetailCommentViewController: BaseViewController {
   @IBOutlet var inputTextViewHeightConstraints: NSLayoutConstraint!
   @IBOutlet var sendButton: UIButton!
 
-  let placeholder = "투니의 의견을 작성해주세요 :)"
   var didScroll: ((_ scrollView: UIScrollView) -> Void)?
+  var pageSize: Int = 10
   var webtoon: Webtoon?
-  var webtoonDetail: WebtoonDetail? {
+  var commentItem: CommentItem? {
     didSet {
       DispatchQueue.main.async {
         self.mainTableView.reloadData()
@@ -73,13 +75,7 @@ class DetailCommentViewController: BaseViewController {
   }
 
   func initSendButton() {
-    if !isEmpty(inputTextView) {
-      sendButton.backgroundColor = kGRAY_80
-      sendButton.tintColor = kWHITE
-    } else {
-      sendButton.backgroundColor = kGRAY_10
-      sendButton.tintColor = kBLACK
-    }
+    sendButton.addTarget(self, action: #selector(sendButton(_:)), for: .touchUpInside)
   }
 
   func keyboardObserver() {
@@ -122,7 +118,7 @@ class DetailCommentViewController: BaseViewController {
     keyboardObserver()
 
     startActivity()
-    fetchDetail(with: webtoon)
+    fetchComment(pageSize: pageSize)
   }
 
   deinit {
@@ -149,32 +145,58 @@ extension DetailCommentViewController {
       self.inputViewContainerBottomConstraints.constant = Metric.bottomConstraints
     })
   }
+
+  @objc
+  func sendButton(_ sender: UIButton) {
+    guard !inputTextView.text.isEmpty && inputTextView.text != placeholder else { return }
+    print(sender)
+
+    startActivity()
+    if let webtoon = webtoon {
+      TooniNetworkService.shared.request(to: .writeComment(webtoon.id, inputTextView.text), decoder: String.self) { [weak self] response in
+        guard let self = self else { return }
+        print(response)
+
+        self.inputTextView.text = ""
+        self.inputTextView.resignFirstResponder()
+        self.didChangeSendButton(by: self.inputTextView)
+
+        self.fetchComment(pageSize: self.pageSize) { _ in
+          self.stopActivity()
+        }
+      }
+    }
+  }
 }
 
 // MARK: - Helper method
 
 extension DetailCommentViewController {
 
-  func fetchDetail(with webtoon: Webtoon?) {
+  func fetchComment(pageSize: Int, completion: ((Bool) -> Void)? = nil) {
     guard let webtoon = webtoon else { return }
-    TooniNetworkService.shared.request(to: .webtoonDetail("\(webtoon.id)"), decoder: WebtoonDetail.self) { [weak self] response in
+
+    TooniNetworkService.shared.request(to: .readComment("\(webtoon.id)", "\(pageSize)"), decoder: CommentItem.self) { [weak self] response in
       switch response.result {
       case .success:
-        guard let webtoonDetail = response.json as? WebtoonDetail else { return }
-        self?.webtoonDetail = webtoonDetail
+        guard let commentItem = response.json as? CommentItem else { return }
+        self?.commentItem = commentItem
+        completion?(true)
       case .failure:
         print(response)
+        completion?(false)
       }
     }
   }
 
-  func isEmpty(_ textView: UITextView) -> Bool {
-    guard let text = textView.text,
-          !text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty else {
-      return false
+  func didChangeSendButton(by textView: UITextView) {
+    if textView.text.isEmpty || inputTextView.text == placeholder {
+      sendButton.backgroundColor = kGRAY_10
+      sendButton.tintColor = kBLACK
+    } else {
+      sendButton.backgroundColor = kGRAY_80
+      sendButton.tintColor = kWHITE
     }
-
-    return true
   }
 }
 
@@ -183,12 +205,34 @@ extension DetailCommentViewController {
 extension DetailCommentViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//    return webtoonDetail?.comments.count ?? 0
-    return 10
+    return commentItem?.commentResponse?.count ?? 0
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if let cell = tableView.dequeueReusableCell(withIdentifier: CommentCell.reuseIdentifier, for: indexPath) as? CommentCell {
+
+      if let commentItem = commentItem,
+         let comment = commentItem.commentResponse?[indexPath.row] {
+        cell.bind(comment)
+
+        cell.didTapReport = { button in
+
+        }
+
+        cell.didTapDelete = { button in
+          self.startActivity()
+          TooniNetworkService.shared.request(to: .deleteComment(comment.commentId), decoder: String.self) { [weak self] response in
+            guard let self = self else { return }
+
+            switch response.result {
+            case .success:
+              self.fetchComment(pageSize: self.pageSize)
+            case .failure:
+              print(response)
+            }
+          }
+        }
+      }
 
       return cell
     }
@@ -210,6 +254,14 @@ extension DetailCommentViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return Metric.headerHeight
   }
+
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    if indexPath.row == pageSize - 1 {
+      pageSize += 10
+      startActivity()
+      fetchComment(pageSize: pageSize)
+    }
+  }
 }
 
 // MARK: - UITextView
@@ -227,7 +279,6 @@ extension DetailCommentViewController: UITextViewDelegate {
   }
 
   func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-    initSendButton()
 
     if text == "\n" {
       textView.resignFirstResponder()
@@ -240,6 +291,8 @@ extension DetailCommentViewController: UITextViewDelegate {
     guard textView.contentSize.height <= Metric.inputViewContentSizeMaxHeight else { return }
 
     inputTextViewHeightConstraints.constant = textView.contentSize.height
+
+    didChangeSendButton(by: textView)
   }
 }
 

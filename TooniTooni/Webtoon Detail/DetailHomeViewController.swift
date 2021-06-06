@@ -36,7 +36,7 @@ class DetailHomeViewController: BaseViewController {
 
   private enum Metric {
     static let maxMenuViewTopConstraint: CGFloat = 114
-    static let headerHeight: CGFloat = 94
+    static let headerHeight: CGFloat = 86
     static let menuViewHeight: CGFloat = 50
     static let webtoonUrlButton: CGFloat = 76
     static let webtoonURLButtonBottomConstraints: CGFloat = 44
@@ -77,8 +77,8 @@ class DetailHomeViewController: BaseViewController {
     let commentCell = UINib(nibName: CommentCell.reuseIdentifier, bundle: nil)
     mainTableView.register(commentCell, forCellReuseIdentifier: CommentCell.reuseIdentifier)
 
-    let webtoonListCell = UINib(nibName: HomeWebtoonListCell.reuseIdentifier, bundle: nil)
-    mainTableView.register(webtoonListCell, forCellReuseIdentifier: HomeWebtoonListCell.reuseIdentifier)
+    let webtoonRandomListCell = UINib(nibName: WebtoonRandomListCell.reuseIdentifier, bundle: nil)
+    mainTableView.register(webtoonRandomListCell, forCellReuseIdentifier: WebtoonRandomListCell.reuseIdentifier)
 
     mainTableView.dataSource = self
     mainTableView.delegate = self
@@ -160,8 +160,9 @@ extension DetailHomeViewController: UITableViewDataSource {
     case .info:
       return 1
     case .comment:
-//      return webtoonDetail?.comments.count ?? 0
-      return 3
+      return webtoonDetail?.comments.count ?? 0
+    case .recommend:
+      return 1
     default:
       return 1
     }
@@ -184,15 +185,20 @@ extension DetailHomeViewController: UITableViewDataSource {
     case .comment:
       if let cell = tableView.dequeueReusableCell(withIdentifier: CommentCell.reuseIdentifier, for: indexPath) as? CommentCell {
 
+        if let webtoonDetail = webtoonDetail {
+          cell.bind(webtoonDetail.comments[indexPath.row])
+        }
+
         return cell
       }
 
       return .init()
     case .recommend:
-      if let cell = tableView.dequeueReusableCell(withIdentifier: HomeWebtoonListCell.reuseIdentifier, for: indexPath) as? HomeWebtoonListCell {
+      if let cell = tableView.dequeueReusableCell(withIdentifier: WebtoonRandomListCell.reuseIdentifier, for: indexPath) as? WebtoonRandomListCell {
 
-        if let webtoon = webtoon {
-          cell.bind([webtoon])
+        if let webtoonDetail = webtoonDetail {
+          let webtoons = webtoonDetail.randomRecommendWebtoons
+          cell.bind(webtoons)
         }
 
         return cell
@@ -244,8 +250,16 @@ extension DetailHomeViewController: UITableViewDelegate {
     switch sectionType {
     case .info:
       return .leastNormalMagnitude
-    default:
+    case .comment:
+      if webtoonDetail?.comments.count == .zero {
+        return .leastNormalMagnitude
+      } else {
+        return Metric.headerHeight
+      }
+    case .recommend:
       return Metric.headerHeight
+    default:
+      return .leastNormalMagnitude
     }
   }
 }

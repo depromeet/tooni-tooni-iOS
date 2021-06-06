@@ -37,4 +37,3 @@ struct Webtoon: Codable {
     var weekday: [String]?
     var summary: String?
 }
-

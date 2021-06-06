@@ -15,6 +15,9 @@ class CommentCell: UITableViewCell {
   @IBOutlet var reportButton: UIButton!
   @IBOutlet var deleteButton: UIButton!
 
+  var didTapReport: ((UIButton) -> Void)?
+  var didTapDelete: ((UIButton) -> Void)?
+
   override func awakeFromNib() {
     super.awakeFromNib()
 
@@ -42,17 +45,31 @@ class CommentCell: UITableViewCell {
     reportButton.setTitleColor(kGRAY_50, for: .normal)
     reportButton.setTitle("신고", for: .normal)
     reportButton.sizeToFit()
+    reportButton.addTarget(self, action: #selector(reportAction(_:)), for: .touchUpInside)
 
     deleteButton.titleLabel?.font = kCAPTION2_REGULAR
     deleteButton.setTitleColor(kGRAY_50, for: .normal)
     deleteButton.setTitle("삭제", for: .normal)
     deleteButton.sizeToFit()
+    deleteButton.addTarget(self, action: #selector(deleteAction(_:)), for: .touchUpInside)
   }
 }
 
 extension CommentCell {
 
   func bind(_ comment: Comment) {
+    nicknameLabel.text = comment.account.nickname
+    dateLabel.text = comment.writeDate
+    commentLabel.text = comment.content
+  }
 
+  @objc
+  func reportAction(_ sender: UIButton) {
+    didTapReport?(sender)
+  }
+
+  @objc
+  func deleteAction(_ sender: UIButton) {
+    didTapDelete?(sender)
   }
 }
