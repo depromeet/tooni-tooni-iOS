@@ -23,4 +23,3 @@ public func debug<T>(_ message: T, file: String = #file, function: String = #fun
     print("📣 [\(filename(file))]\(functionName(function))(\(line)): \(message)")
   #endif
 }
-

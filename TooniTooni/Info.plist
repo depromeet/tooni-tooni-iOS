@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>CFBundleDisplayName</key>
-	<string>투니투니</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,25 +11,40 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>투니투니</string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>cartoon.daumcdn.net</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NotoSansKR-Bold.otf</string>
 		<string>NotoSansKR-Medium.otf</string>
 		<string>NotoSansKR-Regular.otf</string>
+		<string>Montserrat-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -73,7 +86,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
+	<key>User Interface Style
+
+</key>
+	<string>Light</string>
 </dict>
 </plist>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeneralMenuView" customModule="TooniTooni" customModuleProvider="target">
+            <connections>
+                <outlet property="baseView" destination="5cm-r1-XLJ" id="IBV-hZ-Pbe"/>
+                <outlet property="mainCollectionView" destination="tPv-YT-8lX" id="9TD-WB-abY"/>
+                <outlet property="selectedView" destination="faJ-HT-GIC" id="JOv-qF-bNh"/>
+                <outlet property="selectedViewLeftConstraint" destination="jg8-a6-PwJ" id="JsI-rn-SaA"/>
+                <outlet property="selectedViewWidthConstraint" destination="yRH-p4-q2Y" id="7ah-WS-5Jj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="jd4-It-r60">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-r1-XLJ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faJ-HT-GIC">
+                            <rect key="frame" x="0.0" y="43" width="100" height="7"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="7" id="ANc-j7-ubt"/>
+                                <constraint firstAttribute="width" constant="100" id="yRH-p4-q2Y"/>
+                            </constraints>
+                        </view>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="tPv-YT-8lX">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gXW-b7-mQk">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider_b" translatesAutoresizingMaskIntoConstraints="NO" id="yCV-xd-eb9">
+                            <rect key="frame" x="0.0" y="63" width="414" height="1"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="EVg-MZ-d0c"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="tPv-YT-8lX" secondAttribute="bottom" id="2oJ-6o-bGk"/>
+                        <constraint firstAttribute="bottom" secondItem="yCV-xd-eb9" secondAttribute="bottom" id="6AY-S9-I1j"/>
+                        <constraint firstAttribute="bottom" secondItem="faJ-HT-GIC" secondAttribute="bottom" constant="14" id="Igr-Hl-fu2"/>
+                        <constraint firstAttribute="trailing" secondItem="yCV-xd-eb9" secondAttribute="trailing" id="OVV-ED-uaf"/>
+                        <constraint firstItem="yCV-xd-eb9" firstAttribute="leading" secondItem="5cm-r1-XLJ" secondAttribute="leading" id="Ua2-v6-zo1"/>
+                        <constraint firstItem="tPv-YT-8lX" firstAttribute="leading" secondItem="5cm-r1-XLJ" secondAttribute="leading" id="XwB-Yk-UdD"/>
+                        <constraint firstItem="tPv-YT-8lX" firstAttribute="top" secondItem="5cm-r1-XLJ" secondAttribute="top" id="cgP-7l-pxI"/>
+                        <constraint firstAttribute="trailing" secondItem="tPv-YT-8lX" secondAttribute="trailing" id="isu-2A-rRv"/>
+                        <constraint firstItem="faJ-HT-GIC" firstAttribute="leading" secondItem="5cm-r1-XLJ" secondAttribute="leading" id="jg8-a6-PwJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Zw4-Xv-GU5"/>
+            <constraints>
+                <constraint firstItem="Zw4-Xv-GU5" firstAttribute="trailing" secondItem="5cm-r1-XLJ" secondAttribute="trailing" id="Qq6-94-fAG"/>
+                <constraint firstItem="5cm-r1-XLJ" firstAttribute="top" secondItem="jd4-It-r60" secondAttribute="top" id="WGn-Bv-8Qr"/>
+                <constraint firstItem="5cm-r1-XLJ" firstAttribute="leading" secondItem="Zw4-Xv-GU5" secondAttribute="leading" id="jMm-ca-XyG"/>
+                <constraint firstAttribute="bottom" secondItem="5cm-r1-XLJ" secondAttribute="bottom" id="psr-nU-rbX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-154" y="104"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="divider_b" width="2" height="1"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

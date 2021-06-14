@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dTR-pJ-qyF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="dVE-wc-IAp">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="dTR-pJ-qyF" customClass="SplashViewController" customModule="TooniTooni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eqK-iD-GV5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VvZ-dK-YMB">
+                                <rect key="frame" x="122" y="323.5" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="Mvn-rz-6su"/>
+                                    <constraint firstAttribute="height" constant="170" id="pBH-Kk-vy2"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJ3-N4-ldf">
+                                <rect key="frame" x="186" y="461.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_star_big" translatesAutoresizingMaskIntoConstraints="NO" id="BSY-TU-a1x">
+                                <rect key="frame" x="278" y="495.5" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="QLI-c2-I5k"/>
+                                    <constraint firstAttribute="height" constant="30" id="rnC-NJ-WBQ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_star_big" translatesAutoresizingMaskIntoConstraints="NO" id="dcC-oC-z5r">
+                                <rect key="frame" x="110" y="323.5" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="1Jw-OG-U5d"/>
+                                    <constraint firstAttribute="width" constant="38" id="1zg-e1-hdh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qo9-Of-E3G"/>
+                        <color key="backgroundColor" name="kGRAY_90"/>
+                        <constraints>
+                            <constraint firstItem="dcC-oC-z5r" firstAttribute="top" secondItem="VvZ-dK-YMB" secondAttribute="top" id="3Yf-vn-iHc"/>
+                            <constraint firstItem="WJ3-N4-ldf" firstAttribute="top" secondItem="VvZ-dK-YMB" secondAttribute="bottom" constant="-32" id="7pN-R2-hNr"/>
+                            <constraint firstItem="VvZ-dK-YMB" firstAttribute="centerX" secondItem="eqK-iD-GV5" secondAttribute="centerX" id="LEv-TK-u4B"/>
+                            <constraint firstItem="WJ3-N4-ldf" firstAttribute="centerX" secondItem="eqK-iD-GV5" secondAttribute="centerX" id="Lpy-qb-egU"/>
+                            <constraint firstItem="WJ3-N4-ldf" firstAttribute="centerY" secondItem="eqK-iD-GV5" secondAttribute="centerY" constant="24" id="VmW-mr-tBL"/>
+                            <constraint firstItem="dcC-oC-z5r" firstAttribute="leading" secondItem="VvZ-dK-YMB" secondAttribute="leading" constant="-12" id="fKx-rc-gS4"/>
+                            <constraint firstItem="BSY-TU-a1x" firstAttribute="trailing" secondItem="VvZ-dK-YMB" secondAttribute="trailing" constant="16" id="qyP-P5-wlb"/>
+                            <constraint firstItem="BSY-TU-a1x" firstAttribute="bottom" secondItem="VvZ-dK-YMB" secondAttribute="bottom" constant="32" id="znQ-a4-hAG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bigStarImageView" destination="dcC-oC-z5r" id="AZt-uz-DmQ"/>
+                        <outlet property="logoImageView" destination="VvZ-dK-YMB" id="W1r-Iq-SEF"/>
+                        <outlet property="smallStarImageView" destination="BSY-TU-a1x" id="Ony-R8-bL4"/>
+                        <outlet property="titleLabel" destination="WJ3-N4-ldf" id="fhJ-q0-2Pq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9c-bQ-IiX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-325" y="68"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_star_big" width="38" height="38"/>
+        <namedColor name="kGRAY_90">
+            <color red="0.094117647058823528" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

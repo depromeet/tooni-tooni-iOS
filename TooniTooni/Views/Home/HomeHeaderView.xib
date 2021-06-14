@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="xLf-mT-jU9" customClass="HomeHeaderView" customModule="TooniTooni" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lsL-dl-cBZ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9wI-fm-sYL">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XsO-gt-1uX">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="9wI-fm-sYL" firstAttribute="top" secondItem="lsL-dl-cBZ" secondAttribute="top" id="6AR-bG-6iH"/>
+                        <constraint firstAttribute="bottom" secondItem="9wI-fm-sYL" secondAttribute="bottom" id="6hB-Su-8XM"/>
+                        <constraint firstItem="9wI-fm-sYL" firstAttribute="leading" secondItem="lsL-dl-cBZ" secondAttribute="leading" id="l3x-GY-2Y3"/>
+                        <constraint firstAttribute="trailing" secondItem="9wI-fm-sYL" secondAttribute="trailing" id="mnl-Mv-Kcc"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zCX-rb-vpO">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXe-Mu-Ay3">
+                            <rect key="frame" x="362" y="0.0" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="OHV-PI-x0a"/>
+                            </constraints>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="9Nt-tB-qtE"/>
+                        <constraint firstItem="WXe-Mu-Ay3" firstAttribute="top" secondItem="zCX-rb-vpO" secondAttribute="top" id="NMg-Xc-SeQ"/>
+                        <constraint firstAttribute="trailing" secondItem="WXe-Mu-Ay3" secondAttribute="trailing" constant="8" id="jdf-j6-aEf"/>
+                        <constraint firstAttribute="bottom" secondItem="WXe-Mu-Ay3" secondAttribute="bottom" id="wQj-2n-iZw"/>
+                    </constraints>
+                </view>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="JRL-vV-sT5" customClass="CustomPageControl" customModule="TooniTooni" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="341.66666666666669" width="414" height="26.333333333333314"/>
+                </pageControl>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="mct-BT-oDj"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="lsL-dl-cBZ" secondAttribute="bottom" id="3K4-Nv-0sr"/>
+                <constraint firstItem="lsL-dl-cBZ" firstAttribute="top" secondItem="xLf-mT-jU9" secondAttribute="top" id="8nr-6J-rPf"/>
+                <constraint firstItem="zCX-rb-vpO" firstAttribute="leading" secondItem="mct-BT-oDj" secondAttribute="leading" id="9RM-ZR-BWJ"/>
+                <constraint firstItem="JRL-vV-sT5" firstAttribute="trailing" secondItem="mct-BT-oDj" secondAttribute="trailing" id="A9R-3R-dUP"/>
+                <constraint firstItem="JRL-vV-sT5" firstAttribute="leading" secondItem="mct-BT-oDj" secondAttribute="leading" id="Ac6-8F-dxk"/>
+                <constraint firstItem="zCX-rb-vpO" firstAttribute="trailing" secondItem="mct-BT-oDj" secondAttribute="trailing" id="EVO-1u-Nfr"/>
+                <constraint firstItem="mct-BT-oDj" firstAttribute="bottom" secondItem="JRL-vV-sT5" secondAttribute="bottom" id="LVR-bX-wBh"/>
+                <constraint firstItem="zCX-rb-vpO" firstAttribute="top" secondItem="mct-BT-oDj" secondAttribute="top" id="MsX-EP-z1P"/>
+                <constraint firstItem="lsL-dl-cBZ" firstAttribute="leading" secondItem="mct-BT-oDj" secondAttribute="leading" id="TzO-Dn-GGn"/>
+                <constraint firstItem="mct-BT-oDj" firstAttribute="trailing" secondItem="lsL-dl-cBZ" secondAttribute="trailing" id="y1p-gg-k2H"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="baseView" destination="lsL-dl-cBZ" id="RbU-Oo-gDi"/>
+                <outlet property="mainCollectionView" destination="9wI-fm-sYL" id="OIJ-uC-hoS"/>
+                <outlet property="pageControl" destination="JRL-vV-sT5" id="s7j-yv-TJG"/>
+                <outlet property="searchButton" destination="WXe-Mu-Ay3" id="raP-8e-bQS"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="86"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
