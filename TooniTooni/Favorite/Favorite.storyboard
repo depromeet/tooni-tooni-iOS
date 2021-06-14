@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorite View Controller-->
+        <scene sceneID="wwI-44-nKZ">
+            <objects>
+                <viewController storyboardIdentifier="FavoriteViewController" id="JTN-RR-MlJ" customClass="FavoriteViewController" customModule="TooniTooni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a1J-Y9-Bxc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yoZ-bg-ZVo" customClass="GeneralNavigationView" customModule="TooniTooni" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4Uf-Rq-fS2"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcK-Sr-7IF" customClass="WebtoonMenuView" customModule="TooniTooni" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="144" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hBW-Yw-jzb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByK-AL-TCb">
+                                <rect key="frame" x="0.0" y="194" width="414" height="668"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0fl-TZ-e9h"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ByK-AL-TCb" firstAttribute="top" secondItem="CcK-Sr-7IF" secondAttribute="bottom" id="1SU-GK-iG1"/>
+                            <constraint firstAttribute="trailing" secondItem="CcK-Sr-7IF" secondAttribute="trailing" id="9UD-sE-ApR"/>
+                            <constraint firstItem="ByK-AL-TCb" firstAttribute="leading" secondItem="0fl-TZ-e9h" secondAttribute="leading" id="JqN-0H-dtA"/>
+                            <constraint firstItem="0fl-TZ-e9h" firstAttribute="trailing" secondItem="ByK-AL-TCb" secondAttribute="trailing" id="KZd-9e-sQa"/>
+                            <constraint firstItem="yoZ-bg-ZVo" firstAttribute="leading" secondItem="a1J-Y9-Bxc" secondAttribute="leading" id="VqS-OI-cvg"/>
+                            <constraint firstItem="CcK-Sr-7IF" firstAttribute="leading" secondItem="0fl-TZ-e9h" secondAttribute="leading" id="Zzr-GH-2kb"/>
+                            <constraint firstItem="yoZ-bg-ZVo" firstAttribute="top" secondItem="0fl-TZ-e9h" secondAttribute="top" id="ePq-Jk-DPf"/>
+                            <constraint firstItem="0fl-TZ-e9h" firstAttribute="bottom" secondItem="ByK-AL-TCb" secondAttribute="bottom" id="gwS-ud-Ksw"/>
+                            <constraint firstItem="0fl-TZ-e9h" firstAttribute="trailing" secondItem="yoZ-bg-ZVo" secondAttribute="trailing" id="hcJ-p6-XEA"/>
+                            <constraint firstItem="CcK-Sr-7IF" firstAttribute="top" secondItem="yoZ-bg-ZVo" secondAttribute="bottom" id="ytg-1m-kLO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="baseView" destination="ByK-AL-TCb" id="MbT-yh-Ybf"/>
+                        <outlet property="menuView" destination="CcK-Sr-7IF" id="hwK-ai-leC"/>
+                        <outlet property="navigationView" destination="yoZ-bg-ZVo" id="uKN-Ek-bxq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U5M-6c-mZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="471" y="-166"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="5JF-h3-PLu">
+            <objects>
+                <pageViewController storyboardIdentifier="FavoritePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="I3A-Tk-1bi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3yI-FV-yMM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1171" y="-166"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="27p-Wo-Lk7">
+            <objects>
+                <viewController id="wKH-Oi-igD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lg9-vN-uMG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XaN-Qc-bcl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iDA-Vu-bAX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1870" y="-166"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hLs-HD-RQr">
+            <objects>
+                <viewController id="8Sy-dy-0x2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wlw-d2-p5g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="15p-ii-Q0j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ee-GV-LDL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2568" y="-166"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
