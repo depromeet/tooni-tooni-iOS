@@ -48,18 +48,10 @@ class GeneralBadgeView: BaseCustomView {
 extension GeneralBadgeView {
     
     func bind(_ webtoon: Webtoon) {
-        if webtoon.site?.lowercased() == "naver" {
-            self.titleLabel.text = "N"
-            self.baseView.backgroundColor = kNAVER_100
-        }
-        else if webtoon.site?.lowercased() == "daum" {
-            self.titleLabel.text = "D"
-            self.baseView.backgroundColor = kDAUM_100
-        }
-        else if webtoon.site?.lowercased() == "kakao" {
-            self.titleLabel.text = "K"
-            self.baseView.backgroundColor = kKAKAO_100
-        }
+        guard let site = webtoon.site else { return }
+        
+        self.titleLabel.text = site.siteShortString
+        self.baseView.backgroundColor = site.siteColor
     }
     
 }

@@ -2,19 +2,24 @@
 //  HomeNoticeCell.swift
 //  TooniTooni
 //
-//  Created by GENETORY on 2021/04/27.
+//  Created by GENETORY on 2021/05/28.
 //
 
 import UIKit
 
-let kHomeNoticeCellID =                                     "HomeNoticeCell"
+let kHomeNoticeCellID =                                             "HomeNoticeCell"
 
-class HomeNoticeCell: UITableViewCell {
+class HomeNoticeCell: UICollectionViewCell {
     
     // MARK: - Vars
     
     @IBOutlet weak var baseView: UIView!
+    @IBOutlet weak var bgImageView: UIImageView!
+    @IBOutlet weak var starImageView: UIImageView!
+    @IBOutlet weak var cropView: GeneralCloverView!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var captionLabel: UILabel!
     
     // MARK: - Life Cycle
     
@@ -23,23 +28,56 @@ class HomeNoticeCell: UITableViewCell {
     }
     
     func initBackgroundView() {
-        self.baseView.backgroundColor = kGRAY_10
+        self.baseView.backgroundColor = kWHITE
     }
     
-    func initLabel() {
+    func initLabels() {
+        self.nameLabel.textColor = kWHITE
+        self.nameLabel.font = kCAPTION1_REGULAR
+        self.nameLabel.text = "투니투니"
+
+        self.captionLabel.textColor = kWHITE
+        self.captionLabel.font = kHEADING2_BOLD
+        self.captionLabel.text = nil
+
         self.titleLabel.textColor = kWHITE
-        self.titleLabel.font = UIFont.systemFont(ofSize: 10.0, weight: UIFont.Weight.bold)
-        self.titleLabel.numberOfLines = 0
-        self.titleLabel.textAlignment = .center
-        self.titleLabel.text = "승진님! 세상의 모든 웹툰을 경험해보세요"
+        self.titleLabel.font = kHEADING1_BOLD
+        self.titleLabel.text = nil
     }
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.initVars()
         self.initBackgroundView()
-        self.initLabel()
+        self.initLabels()
+    }
+    
+}
+
+// MARK: - Bind
+
+extension HomeNoticeCell {
+    
+    func bind(_ homeBanner: HomeBanner) {        
+        if let caption = homeBanner.caption {
+            self.captionLabel.attributedText = caption.style(changeText: caption,
+                                                   lineSpacing: 3.0)
+        }
+        
+        if let title = homeBanner.webtoon?.title {
+            self.titleLabel.text = title
+        }
+        
+        if let image = homeBanner.webtoon?.thumbnail { //?.replacingOccurrences(of: "http://", with: "https://") {
+            self.bgImageView.kf.setImage(with: URL.init(string: image),
+                                           placeholder: nil,
+                                           options: [.transition(.fade(0.25))], completionHandler: nil)
+        }
+        
+        self.cropView.bind(homeBanner.webtoon)
+        
+        self.starImageView.rotate(duration: 10.0, repeatCount: 0)
     }
     
 }

@@ -28,15 +28,15 @@ class HomeAuthorCell: UICollectionViewCell {
     }
     
     func initImageView() {
-        self.thumbImageView.layer.cornerRadius = 26.0
+        self.thumbImageView.layer.cornerRadius = 40.0
         self.thumbImageView.clipsToBounds = true
         self.thumbImageView.backgroundColor = kGRAY_10
         self.thumbImageView.contentMode = .scaleAspectFill
     }
     
     func initLabel() {
-        self.authorLabel.textColor = .black
-        self.authorLabel.font = UIFont.systemFont(ofSize: 12.0, weight: UIFont.Weight.regular)
+        self.authorLabel.textColor = kBLACK
+        self.authorLabel.font = kBODY2_REGULAR
         self.authorLabel.textAlignment = .center
         self.authorLabel.text = nil
     }
@@ -58,6 +58,12 @@ extension HomeAuthorCell {
     
     func bind(_ author: Author) {
         self.authorLabel.text = author.name
+        
+        if let image = author.authorImage {
+            self.thumbImageView.kf.setImage(with: URL.init(string: image),
+                                           placeholder: nil,
+                                           options: [.transition(.fade(0.25))], completionHandler: nil)
+        }
     }
     
 }

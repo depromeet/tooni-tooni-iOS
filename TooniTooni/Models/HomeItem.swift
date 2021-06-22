@@ -13,13 +13,15 @@ struct Home: Codable {
     var trendingList: [Webtoon]?
     var genreList: [Webtoon]?
     var bingeList: [Webtoon]?
+    var authorList: [Author]?
     
     enum CodingKeys: String, CodingKey {
-        case topBanner = "topBanner"
+        case topBanner = "mainBanner"
         case weekdayList = "weekdayWebtoons"
-        case trendingList = "trendingWebttons"
+        case trendingList = "trendingWebtoons"
         case genreList = "genreWebtoons"
         case bingeList = "bingeWatchableWebtoons"
+        case authorList = "recommendAuthors"
     }
 }
 

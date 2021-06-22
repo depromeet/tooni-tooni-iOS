@@ -32,6 +32,8 @@ class BaseCustomView: UIView {
     }
     
     func commonInit() {
+        self.overrideUserInterfaceStyle = .light
+
         self.containerView = Bundle.main.loadNibNamed(self.className, owner: self, options: nil)?.first as? UIView
         self.containerView.frame = self.bounds
         self.containerView.backgroundColor = .clear

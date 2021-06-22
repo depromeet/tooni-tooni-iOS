@@ -11,20 +11,28 @@ class WeekListViewController: BaseViewController {
     
     // MARK: - Vars
     
+    @IBOutlet weak var mainCollectionViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var mainCollectionView: UICollectionView!
-    @IBOutlet weak var activity: GeneralActivity!
+    @IBOutlet weak var activity: CustomActivity!
     
     var webtoonList: [Webtoon]? {
         didSet {
             DispatchQueue.main.async {
                 self.stopActivity()
                 self.mainCollectionView.reloadData()
+                
+                self.view.layoutIfNeeded()
+                UIView.animate(withDuration: 0.25) {
+                    self.mainCollectionView.alpha = 1.0
+                } completion: { _ in
+
+                }
             }
         }
     }
 
     // MARK: - Life Cycle
-    
+        
     func initBackgroundView() {
         self.view.backgroundColor = kWHITE
     }
@@ -50,16 +58,19 @@ class WeekListViewController: BaseViewController {
         self.mainCollectionView.alwaysBounceHorizontal = false
         self.mainCollectionView.alwaysBounceVertical = true
         self.mainCollectionView.collectionViewLayout = layout
+        self.mainCollectionView.alpha = 0.0
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+
         self.initBackgroundView()
         self.initCollectionView()
         
-        self.startActivity()
-        self.fetchWeekWebtoons()
+        if self.webtoonList == nil {
+            self.startActivity()
+            self.fetchWeekWebtoons()
+        }
     }
     
 }
@@ -69,20 +80,34 @@ class WeekListViewController: BaseViewController {
 extension WeekListViewController {
     
     func fetchWeekWebtoons() {
-        guard let short = WeekMenuType.init(rawValue: self.pageIdx)?.short else { return }
+        guard let weekMenuType = WeekMenuType.init(rawValue: self.pageIdx) else { return }
 
-        TooniNetworkService.shared.request(to: .weekWebtoon(short), decoder: WeekWebtoon.self) { [unowned self] response in
-            switch response.result {
-            case .success:
-                guard let webtoons = (response.json as? WeekWebtoon)?.webtoons else { return }
-                
-                self.webtoonList = webtoons
-            case .failure:
-                print(response)
+        if weekMenuType.isCompleted {
+          TooniNetworkService.shared.request(to: .completed, decoder: WeekWebtoon.self) { [weak self] response in
+              switch response.result {
+              case .success:
+                  guard let webtoons = (response.json as? WeekWebtoon)?.webtoons else { return }
+
+                  self?.webtoonList = webtoons
+              case .failure:
+                  print(response)
+              }
+          }
+        } else {
+            let short = weekMenuType.short
+
+            TooniNetworkService.shared.request(to: .weekWebtoon(short), decoder: WeekWebtoon.self) { [weak self] response in
+                switch response.result {
+                case .success:
+                    guard let webtoons = (response.json as? WeekWebtoon)?.webtoons else { return }
+
+                    self?.webtoonList = webtoons
+                case .failure:
+                    print(response)
+                }
             }
         }
     }
-    
 }
 
 // MARK: - UICollectionView
@@ -115,6 +140,20 @@ extension WeekListViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
+        guard let webtoonList = self.webtoonList else { return }
+
+        let webtoonItem = webtoonList[indexPath.row]
+        self.openDetailVC(webtoonItem)
+    }
+    
+    func openDetailVC(_ webtoonItem: Webtoon) {
+        guard let vc = GeneralHelper.sharedInstance.makeVC("Webtoon", "WebtoonDetailViewController") as? WebtoonDetailViewController else {
+            return
+        }
+        
+        vc.webtoonItem = webtoonItem
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

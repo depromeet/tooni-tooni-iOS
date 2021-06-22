@@ -27,13 +27,20 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_thumbnail_0" translatesAutoresizingMaskIntoConstraints="NO" id="EgJ-PY-0Ra">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_clover" translatesAutoresizingMaskIntoConstraints="NO" id="Hsh-yV-VW7">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Hsh-yV-VW7" secondAttribute="trailing" id="0gE-jl-iwo"/>
                                     <constraint firstAttribute="bottom" secondItem="EgJ-PY-0Ra" secondAttribute="bottom" id="8Qo-TY-78I"/>
+                                    <constraint firstItem="Hsh-yV-VW7" firstAttribute="leading" secondItem="bad-ik-DCA" secondAttribute="leading" id="DW6-WH-qQv"/>
                                     <constraint firstAttribute="width" secondItem="bad-ik-DCA" secondAttribute="height" id="Fef-uu-Wf3"/>
                                     <constraint firstItem="EgJ-PY-0Ra" firstAttribute="top" secondItem="bad-ik-DCA" secondAttribute="top" id="JQY-F1-IkO"/>
+                                    <constraint firstItem="Hsh-yV-VW7" firstAttribute="top" secondItem="bad-ik-DCA" secondAttribute="top" id="KWv-XO-MoQ"/>
                                     <constraint firstItem="EgJ-PY-0Ra" firstAttribute="leading" secondItem="bad-ik-DCA" secondAttribute="leading" id="Ske-bK-uUm"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hsh-yV-VW7" secondAttribute="bottom" id="gwa-po-Y0y"/>
                                     <constraint firstAttribute="trailing" secondItem="EgJ-PY-0Ra" secondAttribute="trailing" id="haL-cY-fIp"/>
                                 </constraints>
                             </view>
@@ -57,7 +64,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sdfasd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5F-sA-SN2">
-                                <rect key="frame" x="8" y="147.5" width="121" height="14.5"/>
+                                <rect key="frame" x="8" y="143.5" width="121" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -75,7 +82,7 @@
                             <constraint firstItem="OlT-Xd-hXN" firstAttribute="leading" secondItem="JJ8-Ds-xqm" secondAttribute="leading" id="YaH-pS-xHp"/>
                             <constraint firstItem="JJ8-Ds-xqm" firstAttribute="leading" secondItem="bad-ik-DCA" secondAttribute="leading" constant="-8" id="jKv-kH-fnY"/>
                             <constraint firstAttribute="trailing" secondItem="2fK-Vu-TEA" secondAttribute="trailing" id="lsq-uS-78Q"/>
-                            <constraint firstItem="g5F-sA-SN2" firstAttribute="top" secondItem="2fK-Vu-TEA" secondAttribute="bottom" constant="4" id="ocL-FP-GEF"/>
+                            <constraint firstItem="g5F-sA-SN2" firstAttribute="top" secondItem="2fK-Vu-TEA" secondAttribute="bottom" id="ocL-FP-GEF"/>
                             <constraint firstAttribute="trailing" secondItem="g5F-sA-SN2" secondAttribute="trailing" id="riZ-ZI-Xe0"/>
                             <constraint firstAttribute="trailing" secondItem="bad-ik-DCA" secondAttribute="trailing" id="soX-L5-Zq2"/>
                         </constraints>
@@ -103,6 +110,7 @@
     <resources>
         <image name="Img_thumbnail_0" width="312" height="312"/>
         <image name="icon_corner" width="8" height="7"/>
+        <image name="img_clover" width="104" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

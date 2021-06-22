@@ -88,12 +88,11 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBw-BG-HRD" customClass="GeneralActivity" customModule="TooniTooni" customModuleProvider="target">
-                                <rect key="frame" x="187" y="428" width="40" height="40"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBw-BG-HRD" customClass="CustomActivity" customModule="TooniTooni" customModuleProvider="target">
+                                <rect key="frame" x="171" y="412" width="72" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="Ehe-K5-53d"/>
-                                    <constraint firstAttribute="height" constant="40" id="Kg9-yc-uuk"/>
+                                    <constraint firstAttribute="width" constant="72" id="Ehe-K5-53d"/>
+                                    <constraint firstAttribute="height" constant="72" id="Kg9-yc-uuk"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -111,6 +110,7 @@
                     <connections>
                         <outlet property="activity" destination="wBw-BG-HRD" id="5Oo-zv-UJb"/>
                         <outlet property="mainCollectionView" destination="jDt-Ud-dA3" id="BW9-u6-opo"/>
+                        <outlet property="mainCollectionViewTopConstraint" destination="AIL-P2-DyX" id="6fN-UO-mIS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6D-Ga-bwM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

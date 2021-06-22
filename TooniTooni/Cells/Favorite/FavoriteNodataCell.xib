@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteNodataCell" rowHeight="291" id="my8-66-k04" customClass="FavoriteNodataCell" customModule="TooniTooni" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="my8-66-k04" id="Wgn-QD-ea9">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtF-Qc-Qc0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="없음" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itj-m8-9VM">
+                                <rect key="frame" x="192.5" y="89.5" width="29.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="9Tl-pf-1eP"/>
+                            <constraint firstItem="itj-m8-9VM" firstAttribute="centerX" secondItem="qtF-Qc-Qc0" secondAttribute="centerX" id="jDf-dc-Kzf"/>
+                            <constraint firstItem="itj-m8-9VM" firstAttribute="centerY" secondItem="qtF-Qc-Qc0" secondAttribute="centerY" id="qfr-ij-dAs"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="qtF-Qc-Qc0" secondAttribute="bottom" id="0p9-4x-NYo"/>
+                    <constraint firstItem="qtF-Qc-Qc0" firstAttribute="leading" secondItem="Wgn-QD-ea9" secondAttribute="leading" id="6st-ca-6Zl"/>
+                    <constraint firstItem="qtF-Qc-Qc0" firstAttribute="top" secondItem="Wgn-QD-ea9" secondAttribute="top" id="GgH-fe-IYa"/>
+                    <constraint firstAttribute="trailing" secondItem="qtF-Qc-Qc0" secondAttribute="trailing" id="PbU-Wz-qkT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="baseView" destination="qtF-Qc-Qc0" id="itc-1B-rUt"/>
+            </connections>
+            <point key="canvasLocation" x="-88.405797101449281" y="209.26339285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

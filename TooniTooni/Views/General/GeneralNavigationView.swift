@@ -15,6 +15,7 @@ class GeneralNavigationView: BaseCustomView {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabelLeftConstraint: NSLayoutConstraint!
     @IBOutlet weak var subButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var bigTitleLabel: UILabel!
@@ -26,7 +27,7 @@ class GeneralNavigationView: BaseCustomView {
     }
     
     func initBackgroundView() {
-        self.baseView.backgroundColor = .clear
+        self.baseView.backgroundColor = kCLEAR
     }
     
     func initButtons() {
@@ -36,13 +37,13 @@ class GeneralNavigationView: BaseCustomView {
     }
     
     func initLabels() {
-        self.titleLabel.font = UIFont.systemFont(ofSize: 16.0, weight: UIFont.Weight.bold)
-        self.titleLabel.textColor = .black
-        self.titleLabel.textAlignment = .center
+        self.titleLabel.font = kBODY1_BOLD
+        self.titleLabel.textColor = kGRAY_90
+        self.titleLabel.textAlignment = .left
         self.titleLabel.text = nil
 
         self.bigTitleLabel.font = UIFont.systemFont(ofSize: 26.0, weight: UIFont.Weight.heavy)
-        self.bigTitleLabel.textColor = .black
+        self.bigTitleLabel.textColor = kGRAY_90
         self.bigTitleLabel.text = nil
     }
     
@@ -60,6 +61,10 @@ class GeneralNavigationView: BaseCustomView {
 // MARK: -
 
 extension GeneralNavigationView {
+    
+    func leftButton(_ left: Bool) {
+        self.titleLabelLeftConstraint.constant = left ? 60.0 : 20.0
+    }
     
     func title(_ title: String?) {
         self.titleLabel.text = title

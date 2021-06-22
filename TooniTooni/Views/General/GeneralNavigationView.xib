@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeneralNavigationView" customModule="Esports" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeneralNavigationView" customModule="TooniTooni" customModuleProvider="target">
             <connections>
                 <outlet property="baseView" destination="Gi6-6s-2Bi" id="kzH-ar-jSz"/>
                 <outlet property="bigTitleLabel" destination="wwo-8S-Am3" id="B2B-Ul-f4g"/>
@@ -17,6 +17,7 @@
                 <outlet property="rightButton" destination="Ecy-1f-IKP" id="pQl-KH-Aty"/>
                 <outlet property="subButton" destination="I9c-ai-xKd" id="rih-Ds-xWe"/>
                 <outlet property="titleLabel" destination="aXS-wP-0O2" id="Hwi-6R-czW"/>
+                <outlet property="titleLabelLeftConstraint" destination="JhT-t4-hfo" id="7Ol-WT-OcA"/>
                 <outlet property="topView" destination="DDG-CN-n3h" id="AVN-uX-Ofd"/>
             </connections>
         </placeholder>
@@ -56,7 +57,7 @@
                                     </constraints>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXS-wP-0O2">
-                                    <rect key="frame" x="56" y="2" width="302" height="42"/>
+                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -65,11 +66,11 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="Ecy-1f-IKP" firstAttribute="top" secondItem="DDG-CN-n3h" secondAttribute="top" id="Izd-22-Hsj"/>
-                                <constraint firstItem="aXS-wP-0O2" firstAttribute="leading" secondItem="DDG-CN-n3h" secondAttribute="leading" constant="56" id="JhT-t4-hfo"/>
+                                <constraint firstItem="aXS-wP-0O2" firstAttribute="leading" secondItem="DDG-CN-n3h" secondAttribute="leading" constant="20" id="JhT-t4-hfo"/>
                                 <constraint firstAttribute="bottom" secondItem="I9c-ai-xKd" secondAttribute="bottom" id="KBU-sf-fvn"/>
                                 <constraint firstItem="Ecy-1f-IKP" firstAttribute="leading" secondItem="I9c-ai-xKd" secondAttribute="trailing" id="MIh-1N-Q2g"/>
                                 <constraint firstItem="plc-Hv-Mnb" firstAttribute="leading" secondItem="DDG-CN-n3h" secondAttribute="leading" constant="8" id="Xm9-qD-c1j"/>
-                                <constraint firstAttribute="trailing" secondItem="aXS-wP-0O2" secondAttribute="trailing" constant="56" id="bos-29-xpO"/>
+                                <constraint firstAttribute="trailing" secondItem="aXS-wP-0O2" secondAttribute="trailing" constant="20" id="bos-29-xpO"/>
                                 <constraint firstAttribute="height" constant="44" id="cHS-Su-sMV"/>
                                 <constraint firstAttribute="bottom" secondItem="plc-Hv-Mnb" secondAttribute="bottom" id="e3K-SM-nz0"/>
                                 <constraint firstAttribute="bottom" secondItem="aXS-wP-0O2" secondAttribute="bottom" id="fML-bc-Mc5"/>
@@ -77,7 +78,7 @@
                                 <constraint firstAttribute="trailing" secondItem="Ecy-1f-IKP" secondAttribute="trailing" constant="8" id="lov-J1-spR"/>
                                 <constraint firstItem="plc-Hv-Mnb" firstAttribute="top" secondItem="DDG-CN-n3h" secondAttribute="top" id="nOT-qI-Ia1"/>
                                 <constraint firstItem="I9c-ai-xKd" firstAttribute="top" secondItem="DDG-CN-n3h" secondAttribute="top" id="p4O-wt-Cje"/>
-                                <constraint firstItem="aXS-wP-0O2" firstAttribute="top" secondItem="DDG-CN-n3h" secondAttribute="top" constant="2" id="rIP-V5-dYq"/>
+                                <constraint firstItem="aXS-wP-0O2" firstAttribute="top" secondItem="DDG-CN-n3h" secondAttribute="top" id="rIP-V5-dYq"/>
                             </constraints>
                         </view>
                     </subviews>

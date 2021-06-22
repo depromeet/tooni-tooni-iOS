@@ -9,6 +9,10 @@ import UIKit
 
 let kHomeGenreListCellID =                                                  "HomeGenreListCell"
 
+protocol HomeGenreListCellDelegate: AnyObject {
+    func didWebtoonHomeGenreListCell(cell: HomeGenreListCell, webtoon: Webtoon)
+}
+
 class HomeGenreListCell: UITableViewCell {
     
     // MARK: - Vars
@@ -18,6 +22,8 @@ class HomeGenreListCell: UITableViewCell {
 
     var webtoonList: [Webtoon] = []
 
+    weak var delegate: HomeGenreListCellDelegate?
+    
     // MARK: - Life Cycle
     
     func initVars() {
@@ -97,7 +103,9 @@ extension HomeGenreListCell: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        
+
+        let webtoonItem = self.webtoonList[indexPath.row]
+        self.delegate?.didWebtoonHomeGenreListCell(cell: self, webtoon: webtoonItem)
     }
     
 }

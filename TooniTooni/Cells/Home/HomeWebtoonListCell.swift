@@ -9,6 +9,10 @@ import UIKit
 
 let kHomeWebtoonListCellID =                                        "HomeWebtoonListCell"
 
+protocol HomeWebtoonListCellDelegate: AnyObject {
+    func didWebtoonHomeWebtoonListCell(cell: HomeWebtoonListCell, webtoon: Webtoon)
+}
+
 class HomeWebtoonListCell: UITableViewCell {
     
     // MARK: - Vars
@@ -17,6 +21,8 @@ class HomeWebtoonListCell: UITableViewCell {
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
     var webtoonList: [Webtoon] = []
+    
+    weak var delegate: HomeWebtoonListCellDelegate?
     
     // MARK: - Life Cycle
     
@@ -98,6 +104,8 @@ extension HomeWebtoonListCell: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
+        let webtoonItem = self.webtoonList[indexPath.row]
+        self.delegate?.didWebtoonHomeWebtoonListCell(cell: self, webtoon: webtoonItem)
     }
     
 }

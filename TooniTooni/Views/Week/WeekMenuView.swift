@@ -7,12 +7,7 @@
 
 import UIKit
 
-protocol WeekMenuTitle {
-    var title: String { get }
-    var short: String { get }
-}
-
-enum WeekMenuType: Int, WeekMenuTitle {
+enum WeekMenuType: Int, CaseIterable {
     case mon
     case tue
     case wed
@@ -46,6 +41,13 @@ enum WeekMenuType: Int, WeekMenuTitle {
         case .sun: return "sun"
         case .completed: return ""
         }
+    }
+
+    var isCompleted: Bool {
+      switch self {
+      case .completed: return true
+      default: return false
+      }
     }
     
     static var currentWeekday: Int {
@@ -158,7 +160,7 @@ extension WeekMenuView {
     func refreshSelectedView(_ idx: Int, _ animation: Bool = true) {
         var width: CGFloat = 24.0
         if let title = WeekMenuType.init(rawValue: idx)?.title {
-        let size = title.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0, weight: UIFont.Weight.bold)])
+        let size = title.size(withAttributes: [NSAttributedString.Key.font: kBODY1_BOLD!])
             width = size.width + 12.0
         }
 

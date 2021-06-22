@@ -5,7 +5,18 @@
 //  Created by GENETORY on 2021/04/27.
 //
 
-import Foundation
+import UIKit
+
+struct Genre: Codable {
+    var genre: String?
+    var top20Webtoons: [Webtoon]?
+}
+
+struct WebtoonDetail: Codable {
+    var webtoon: Webtoon?
+    var comments: [Comment]?
+    var randomRecommendWebtoons: [Webtoon]?
+}
 
 struct WeekWebtoon: Codable {
     var sites: [Site]?
@@ -20,6 +31,7 @@ struct Site: Codable {
 struct Author: Codable {
     var id: Int?
     var name: String?
+    var authorImage: String?
 }
 
 struct Webtoon: Codable {
@@ -33,5 +45,8 @@ struct Webtoon: Codable {
     var genres: [String]?
     var score: Double?
     var isComplete: Bool?
+    var weekday: [String]?
+    var summary: String?
+    var url: String?
 }
 

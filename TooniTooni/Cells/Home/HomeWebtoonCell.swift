@@ -16,6 +16,7 @@ class HomeWebtoonCell: UICollectionViewCell {
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var thumbView: UIView!
     @IBOutlet weak var thumbImageView: UIImageView!
+    @IBOutlet weak var cloverImageView: UIImageView!
     @IBOutlet weak var badgeView: GeneralBadgeView!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -39,6 +40,8 @@ class HomeWebtoonCell: UICollectionViewCell {
         self.thumbImageView.clipsToBounds = true
         self.thumbImageView.backgroundColor = kGRAY_10
         self.thumbImageView.contentMode = .scaleAspectFill
+        
+        self.cloverImageView.isHidden = true
     }
     
     func initLabel() {
@@ -74,7 +77,7 @@ extension HomeWebtoonCell {
         self.titleLabel.text = webtoon.title
         self.authorLabel.text = webtoon.authors?.compactMap({ $0.name }).joined(separator: " / ")
         
-        if let image = webtoon.thumbnail {
+        if let image = webtoon.thumbnail { //?.replacingOccurrences(of: "http://", with: "https://") {
             self.thumbImageView.kf.setImage(with: URL.init(string: image),
                                            placeholder: nil,
                                            options: [.transition(.fade(0.25))], completionHandler: nil)
@@ -82,9 +85,13 @@ extension HomeWebtoonCell {
 
         self.badgeView.bind(webtoon)
         
-        let infoString = "4.5 (197)"
-        self.infoLabel.attributedText = infoString.style(changeText: "(197)",
-                                                         font: kCAPTION3_REGULAR)
+        if let score = webtoon.score {
+            self.infoLabel.text = String.init(format: "%.2f", score)
+        }
+    }
+    
+    func clover(_ clover: Bool) {
+        self.cloverImageView.isHidden = !clover
     }
     
 }

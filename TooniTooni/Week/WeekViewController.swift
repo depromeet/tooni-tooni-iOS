@@ -29,7 +29,9 @@ class WeekViewController: BaseViewController {
     }
     
     func initNavigationView() {
-        self.navigationView.title("TOONITOONI")
+        self.setInteractiveRecognizer()
+        
+        self.navigationView.title("요일별 투니")
         self.navigationView.bigTitle(self.showBigTitle)
         
         self.navigationView.rightButton.isHidden = false
@@ -76,7 +78,15 @@ extension WeekViewController {
     
     @objc
     func doSearch() {
-        self.showReadyAlert(vc: self)
+        self.openSearchVC()
+    }
+    
+    func openSearchVC() {
+        if let vc = GeneralHelper.sharedInstance.makeVC("Search", "SearchViewController") as? SearchViewController {
+            vc.hidesBottomBarWhenPushed = true
+
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }

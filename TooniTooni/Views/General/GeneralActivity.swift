@@ -28,14 +28,14 @@ class GeneralActivity: BaseCustomView {
     }
     
     func initBaseView() {
-        self.baseView.backgroundColor = kWHITE
+        self.baseView.backgroundColor = kGRAY_90
         self.baseView.layer.cornerRadius = 20.0
         self.baseView.clipsToBounds = true
     }
     
     func initActivity() {
         self.activity.type = .circleStrokeSpin
-        self.activity.color = kBLUE_100
+        self.activity.color = kWHITE
     }
     
     override func awakeFromNib() {

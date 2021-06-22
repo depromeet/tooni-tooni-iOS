@@ -73,17 +73,17 @@ extension WeekWebtoonCell {
         self.titleLabel.text = webtoon.title
         self.authorLabel.text = webtoon.authors?.compactMap({ $0.name }).joined(separator: " / ")
         
-        if let image = webtoon.thumbnail {
+        if let image = webtoon.thumbnail { //}?.replacingOccurrences(of: "http://", with: "https://") {
             self.thumbImageView.kf.setImage(with: URL.init(string: image),
                                            placeholder: nil,
                                            options: [.transition(.fade(0.25))], completionHandler: nil)
         }
         
-        self.badgeView.bind(webtoon)
+        if let score = webtoon.score {
+            self.infoLabel.text = String.init(format: "%.2f", score)
+        }
         
-        let infoString = "4.5 (197)"
-        self.infoLabel.attributedText = infoString.style(changeText: "(197)",
-                                                         font: kCAPTION3_REGULAR)
+        self.badgeView.bind(webtoon)
     }
     
 }

@@ -9,6 +9,29 @@ import UIKit
 
 extension String {
     
+    // 앱 버전 가져오기
+    var appVersion: String {
+        guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
+            return "-"
+        }
+        
+        return version
+    }
+    
+    // 앱 빌드 가져오기
+    var appBuild: String {
+        guard let version = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {
+            return "-"
+        }
+        
+        return version
+    }
+    
+    // 앱 버전 (빌드) 가져오기
+    var appLongVersion: String {
+        return self.appVersion + " (\(self.appBuild))"
+    }
+
     func style(changeText: String,
                underLine: Bool? = nil,
                stroke: UIColor? = nil,
@@ -61,5 +84,44 @@ extension String {
         return attributedString
     }
 
+    // Site
+    var siteShortString: String {
+        switch self.lowercased() {
+        case "naver":
+            return "N"
+        case "daum":
+            return "D"
+        case "kakao":
+            return "K"
+        default:
+            return ""
+        }
+    }
+    
+    var siteColor: UIColor {
+        switch self.lowercased() {
+        case "naver":
+            return kNAVER_100
+        case "daum":
+            return kDAUM_100
+        case "kakao":
+            return kKAKAO_100
+        default:
+            return kBLUE_100
+        }
+    }
+
+    var weekString: String {
+        switch self {
+        case "MON": return "월"
+        case "TUE": return "화"
+        case "WED": return "수"
+        case "THU": return "목"
+        case "FRI": return "금"
+        case "SAT": return "토"
+        case "SUN": return "일"
+        default: return ""
+        }
+    }
 
 }

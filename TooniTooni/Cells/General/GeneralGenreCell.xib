@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GeneralGenreCell" id="IkS-JV-eUE" customClass="GeneralGenreCell" customModule="TooniTooni" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PQc-nA-Fvk">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMv-km-jrj">
+                        <rect key="frame" x="0.0" y="18" width="100" height="24"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9r-cj-zij">
+                                <rect key="frame" x="10" y="0.0" width="80" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="k9r-cj-zij" firstAttribute="top" secondItem="bMv-km-jrj" secondAttribute="top" id="6mj-4Q-HCn"/>
+                            <constraint firstAttribute="height" constant="24" id="JqV-tN-DH3"/>
+                            <constraint firstItem="k9r-cj-zij" firstAttribute="leading" secondItem="bMv-km-jrj" secondAttribute="leading" constant="10" id="Uxz-MW-vKy"/>
+                            <constraint firstAttribute="trailing" secondItem="k9r-cj-zij" secondAttribute="trailing" constant="10" id="YjY-os-R1l"/>
+                            <constraint firstAttribute="bottom" secondItem="k9r-cj-zij" secondAttribute="bottom" id="mRS-VG-daz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="bMv-km-jrj" secondAttribute="trailing" id="bCK-ve-rW9"/>
+                    <constraint firstItem="bMv-km-jrj" firstAttribute="centerY" secondItem="PQc-nA-Fvk" secondAttribute="centerY" id="fQS-nB-ErE"/>
+                    <constraint firstItem="bMv-km-jrj" firstAttribute="leading" secondItem="PQc-nA-Fvk" secondAttribute="leading" id="iW3-89-eKR"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="baseView" destination="bMv-km-jrj" id="81V-Gx-HA8"/>
+                <outlet property="titleLabel" destination="k9r-cj-zij" id="igL-ij-xmk"/>
+            </connections>
+            <point key="canvasLocation" x="271" y="78"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

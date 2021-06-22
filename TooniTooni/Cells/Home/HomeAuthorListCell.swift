@@ -9,6 +9,10 @@ import UIKit
 
 let kHomeAuthorListCellID =                                        "HomeAuthorListCell"
 
+protocol HomeAuthorListCellDelegate: AnyObject {
+    func didAuthorHomeAuthorListCell(cell: HomeAuthorListCell, author: Author)
+}
+
 class HomeAuthorListCell: UITableViewCell {
     
     // MARK: - Vars
@@ -17,6 +21,8 @@ class HomeAuthorListCell: UITableViewCell {
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
     var authorList: [Author] = []
+    
+    weak var delegate: HomeAuthorListCellDelegate?
     
     // MARK: - Life Cycle
     
@@ -34,8 +40,8 @@ class HomeAuthorListCell: UITableViewCell {
         
         let layout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize.init(width: 52.0, height: 96.0)
-        layout.minimumLineSpacing = 16.0
+        layout.itemSize = CGSize.init(width: 80.0, height: 124.0)
+        layout.minimumLineSpacing = 12.0
         layout.minimumInteritemSpacing = 0.0
         layout.headerReferenceSize = .zero
         layout.footerReferenceSize = .zero
@@ -48,7 +54,6 @@ class HomeAuthorListCell: UITableViewCell {
         self.mainCollectionView.showsHorizontalScrollIndicator = false
         self.mainCollectionView.alwaysBounceHorizontal = true
         self.mainCollectionView.alwaysBounceVertical = false
-        self.mainCollectionView.isPagingEnabled = true
         self.mainCollectionView.collectionViewLayout = layout
     }
 
@@ -67,7 +72,7 @@ class HomeAuthorListCell: UITableViewCell {
 extension HomeAuthorListCell {
     
     func bind(_ authorList: [Author]) {
-        self.authorList = authorList
+        self.authorList = Array(authorList[0...5])
         self.mainCollectionView.reloadData()
     }
     
@@ -99,6 +104,8 @@ extension HomeAuthorListCell: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
+        let authorItem = self.authorList[indexPath.row]
+        self.delegate?.didAuthorHomeAuthorListCell(cell: self, author: authorItem)
     }
     
 }

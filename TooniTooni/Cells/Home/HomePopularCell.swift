@@ -19,6 +19,7 @@ class HomePopularCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     // MARK: - Life Cycle
     
@@ -54,6 +55,10 @@ class HomePopularCell: UITableViewCell {
         self.infoLabel.textColor = kGRAY_80
         self.infoLabel.font = kCAPTION2_REGULAR
         self.infoLabel.text = nil
+        
+        self.scoreLabel.textColor = kGRAY_80
+        self.scoreLabel.font = kCAPTION2_BOLD
+        self.scoreLabel.text = nil
     }
     
     func initBadgeView() {
@@ -81,7 +86,7 @@ extension HomePopularCell {
         self.titleLabel.text = webtoon.title
         self.authorLabel.text = webtoon.authors?.compactMap({ $0.name }).joined(separator: " / ")
         
-        if let image = webtoon.thumbnail {
+        if let image = webtoon.thumbnail { //}?.replacingOccurrences(of: "http://", with: "https://") {
             self.thumbImageView.kf.setImage(with: URL.init(string: image),
                                            placeholder: nil,
                                            options: [.transition(.fade(0.25))], completionHandler: nil)
@@ -91,6 +96,10 @@ extension HomePopularCell {
         self.infoLabel.text = infoString
 
         self.badgeView.bind(webtoon)
+        
+        if let score = webtoon.score {
+            self.scoreLabel.text = String.init(format: "%.2f", score)
+        }
     }
     
 }

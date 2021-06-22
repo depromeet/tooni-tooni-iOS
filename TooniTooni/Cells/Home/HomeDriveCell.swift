@@ -15,7 +15,9 @@ class HomeDriveCell: UITableViewCell {
     
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var genreView: GeneralGenreView!
+    @IBOutlet weak var webtoonView: UIView!
     @IBOutlet weak var bgImageView: UIImageView!
+    @IBOutlet weak var colorImageView: UIImageView!
     @IBOutlet weak var thumbImageView: UIImageView!
     @IBOutlet weak var badgeView: GeneralBadgeView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -37,22 +39,28 @@ class HomeDriveCell: UITableViewCell {
     }
     
     func initImageViews() {
-        self.bgImageView.clipsToBounds = true
+        self.webtoonView.layer.cornerRadius = 5.0
+        self.webtoonView.clipsToBounds = true
+        
         self.bgImageView.contentMode = .scaleAspectFill
-        self.bgImageView.layer.cornerRadius = 5.0
+        self.bgImageView.alpha = 0.5
 
+        self.colorImageView.contentMode = .scaleToFill
+        self.colorImageView.backgroundColor = kGRAY_90
+        self.colorImageView.alpha = 0.8
+        
         self.thumbImageView.clipsToBounds = true
         self.thumbImageView.contentMode = .scaleAspectFill
     }
     
     func initLabels() {
-        self.titleLabel.textColor = .black
-        self.titleLabel.font = UIFont.systemFont(ofSize: 14.0, weight: .medium)
+        self.titleLabel.textColor = kGRAY_90
+        self.titleLabel.font = kBODY2_MEDIUM
         self.titleLabel.textAlignment = .center
         self.titleLabel.text = nil
         
         self.infoLabel.textColor = kWHITE
-        self.infoLabel.font = UIFont.systemFont(ofSize: 10.0, weight: .bold)
+        self.infoLabel.font = kCAPTION2_BOLD
         self.infoLabel.text = nil
     }
     
@@ -74,7 +82,12 @@ extension HomeDriveCell {
     func bind(_ webtoon: Webtoon) {
         self.titleLabel.text = webtoon.title
         
-        if let image = webtoon.thumbnail {
+        if let color = webtoon.backgroundColor {
+            self.colorImageView.image = UIImage.imageFromColor(UIColor.init(hex: color))
+            self.colorImageView.alpha = 0.9
+        }
+        
+        if let image = webtoon.thumbnail { //}?.replacingOccurrences(of: "http://", with: "https://") {
             self.bgImageView.kf.setImage(with: URL.init(string: image),
                                            placeholder: nil,
                                            options: [.transition(.fade(0.25))], completionHandler: nil)
@@ -84,9 +97,10 @@ extension HomeDriveCell {
                                            options: [.transition(.fade(0.25))], completionHandler: nil)
         }
         
-        let infoString = webtoon.genres?.joined(separator: " | ")
-        self.infoLabel.text = infoString
-
+        if let score = webtoon.score {
+            self.infoLabel.text = String.init(format: "%.2f", score)
+        }
+        
         self.badgeView.bind(webtoon)
         self.genreView.bind(webtoon)
     }
