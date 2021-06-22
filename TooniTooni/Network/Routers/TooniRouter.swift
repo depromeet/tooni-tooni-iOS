@@ -21,6 +21,7 @@ enum TooniRouter {
     case author(String)
     case random
     case search(String)
+    case completed
 }
 
 extension TooniRouter: TargetType {
@@ -53,6 +54,8 @@ extension TooniRouter: TargetType {
             return "webtoons/random"
         case .search:
             return "webtoons/search"
+        case .completed:
+            return "webtoons/completed"
         }
     }
     
@@ -79,6 +82,8 @@ extension TooniRouter: TargetType {
         case .random:
             return .get
         case .search:
+            return .get
+        case .completed:
             return .get
         }
     }
@@ -111,6 +116,8 @@ extension TooniRouter: TargetType {
             return .requestPlain
         case let .search(text):
             return .requestParameters(parameters: ["query": text], encoding: URLEncoding.queryString)
+        case .completed:
+          return .requestPlain
         }
     }
     

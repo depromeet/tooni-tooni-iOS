@@ -42,6 +42,13 @@ enum WeekMenuType: Int, CaseIterable {
         case .completed: return ""
         }
     }
+
+    var isCompleted: Bool {
+      switch self {
+      case .completed: return true
+      default: return false
+      }
+    }
     
     static var currentWeekday: Int {
         let day = Calendar.current.component(.weekday, from: Date())

@@ -489,7 +489,7 @@ extension HomeViewController: UIScrollViewDelegate {
     
     func showHideNavigationView(_ show: Bool) {
         self.showHideNavigationView = show
-        
+
         UIView.animate(withDuration: 0.25) {
             self.hideNavigationViewTopConstraint.constant = show ? 0.0 : -self.hideNavigationViewHeightConstraint.constant
             
