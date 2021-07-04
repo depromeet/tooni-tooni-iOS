@@ -130,6 +130,61 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="89.732142857142847"/>
         </scene>
+        <!--Webtoon Web View Controller-->
+        <scene sceneID="d4g-j1-4Lp">
+            <objects>
+                <viewController storyboardIdentifier="WebtoonWebViewController" id="fyA-it-NkH" customClass="WebtoonWebViewController" customModule="TooniTooni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t94-Qr-elU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cL-7g-1ws" customClass="GeneralNavigationView" customModule="TooniTooni" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4sm-A1-nii"/>
+                                </constraints>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8g-p9-Ty3">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tz5-Zc-hTY" customClass="CustomActivity" customModule="TooniTooni" customModuleProvider="target">
+                                <rect key="frame" x="171" y="412" width="72" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="Gk0-JH-VTA"/>
+                                    <constraint firstAttribute="height" constant="72" id="jZF-h6-YLV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KrV-en-64Q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g8g-p9-Ty3" firstAttribute="leading" secondItem="KrV-en-64Q" secondAttribute="leading" id="Aik-Ox-uYG"/>
+                            <constraint firstItem="g8g-p9-Ty3" firstAttribute="top" secondItem="7cL-7g-1ws" secondAttribute="bottom" id="ElX-LG-cSq"/>
+                            <constraint firstItem="7cL-7g-1ws" firstAttribute="leading" secondItem="KrV-en-64Q" secondAttribute="leading" id="HNB-Y6-oqJ"/>
+                            <constraint firstItem="tz5-Zc-hTY" firstAttribute="centerY" secondItem="t94-Qr-elU" secondAttribute="centerY" id="OXQ-EB-dGy"/>
+                            <constraint firstItem="tz5-Zc-hTY" firstAttribute="centerX" secondItem="t94-Qr-elU" secondAttribute="centerX" id="TIO-z5-gwY"/>
+                            <constraint firstItem="KrV-en-64Q" firstAttribute="bottom" secondItem="g8g-p9-Ty3" secondAttribute="bottom" id="XFu-0v-Wnp"/>
+                            <constraint firstItem="7cL-7g-1ws" firstAttribute="top" secondItem="KrV-en-64Q" secondAttribute="top" id="nRi-La-zgy"/>
+                            <constraint firstItem="KrV-en-64Q" firstAttribute="trailing" secondItem="7cL-7g-1ws" secondAttribute="trailing" id="pZM-25-ppk"/>
+                            <constraint firstItem="KrV-en-64Q" firstAttribute="trailing" secondItem="g8g-p9-Ty3" secondAttribute="trailing" id="qTZ-hu-UhU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activity" destination="tz5-Zc-hTY" id="MSW-Ku-l1d"/>
+                        <outlet property="navigationView" destination="7cL-7g-1ws" id="Hzi-4H-RGB"/>
+                        <outlet property="webView" destination="g8g-p9-Ty3" id="4Vb-aE-6Ay"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8F-Q5-l7u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="955" y="90"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
