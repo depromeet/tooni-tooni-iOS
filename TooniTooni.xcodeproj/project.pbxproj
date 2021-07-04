@@ -166,6 +166,7 @@
 		19EA904726634B1E00F280A2 /* GeneralConeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EA904626634B1E00F280A2 /* GeneralConeView.swift */; };
 		19EA904926634B2400F280A2 /* GeneralConeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19EA904826634B2400F280A2 /* GeneralConeView.xib */; };
 		19EA904B2663AB6C00F280A2 /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EA904A2663AB6C00F280A2 /* CGFloatExtensions.swift */; };
+		6B73ADB82691889700756342 /* WebtoonWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73ADB72691889700756342 /* WebtoonWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -323,6 +324,7 @@
 		19EA904626634B1E00F280A2 /* GeneralConeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConeView.swift; sourceTree = "<group>"; };
 		19EA904826634B2400F280A2 /* GeneralConeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralConeView.xib; sourceTree = "<group>"; };
 		19EA904A2663AB6C00F280A2 /* CGFloatExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtensions.swift; sourceTree = "<group>"; };
+		6B73ADB72691889700756342 /* WebtoonWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonWebViewController.swift; sourceTree = "<group>"; };
 		DCB1D1CF57D86EDE346198F6 /* Pods_TooniTooni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TooniTooni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -763,6 +765,7 @@
 			children = (
 				19EA902026623BBD00F280A2 /* Webtoon.storyboard */,
 				19EA902226623BC700F280A2 /* WebtoonDetailViewController.swift */,
+				6B73ADB72691889700756342 /* WebtoonWebViewController.swift */,
 			);
 			path = Webtoon;
 			sourceTree = "<group>";
@@ -978,6 +981,7 @@
 				19B1B485262425A20016F195 /* BaseTabBarViewController.swift in Sources */,
 				195AE4BF266B15DD001A5352 /* SearchViewController.swift in Sources */,
 				195AE4DB266BC1B3001A5352 /* HomeGenreViewController.swift in Sources */,
+				6B73ADB82691889700756342 /* WebtoonWebViewController.swift in Sources */,
 				19CA7157265B7B4A0095BE24 /* Logger.swift in Sources */,
 				194D7A39262543BB00BEEF1C /* SplashViewController.swift in Sources */,
 				19BFA59F2638165500C6B82E /* HomeAuthorCell.swift in Sources */,
