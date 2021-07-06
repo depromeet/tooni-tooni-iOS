@@ -26,7 +26,6 @@
 		194D7A462625464300BEEF1C /* GeneralNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194D7A442625464300BEEF1C /* GeneralNavigationView.xib */; };
 		195AE4BF266B15DD001A5352 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195AE4BE266B15DD001A5352 /* SearchViewController.swift */; };
 		195AE4C1266B15E2001A5352 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 195AE4C0266B15E2001A5352 /* Search.storyboard */; };
-		195AE4C3266B1975001A5352 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 195AE4C2266B1975001A5352 /* GoogleService-Info.plist */; };
 		195AE4C6266B1A47001A5352 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 195AE4C5266B1A47001A5352 /* FirebaseAnalytics */; };
 		195AE4C8266B1A47001A5352 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 195AE4C7266B1A47001A5352 /* FirebaseMessaging */; };
 		195AE4CA266B1A47001A5352 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 195AE4C9266B1A47001A5352 /* FirebaseAuth */; };
@@ -166,7 +165,10 @@
 		19EA904726634B1E00F280A2 /* GeneralConeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EA904626634B1E00F280A2 /* GeneralConeView.swift */; };
 		19EA904926634B2400F280A2 /* GeneralConeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19EA904826634B2400F280A2 /* GeneralConeView.xib */; };
 		19EA904B2663AB6C00F280A2 /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EA904A2663AB6C00F280A2 /* CGFloatExtensions.swift */; };
+		6B0C989826949BF2004331F9 /* AppDelegate+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C989726949BF2004331F9 /* AppDelegate+Push.swift */; };
+		6B0C989926949C16004331F9 /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0C989626949BCE004331F9 /* PushManager.swift */; };
 		6B73ADB82691889700756342 /* WebtoonWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73ADB72691889700756342 /* WebtoonWebViewController.swift */; };
+		6BB013182694A637009BE240 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BB013172694A637009BE240 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,7 +190,6 @@
 		194D7A442625464300BEEF1C /* GeneralNavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralNavigationView.xib; sourceTree = "<group>"; };
 		195AE4BE266B15DD001A5352 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		195AE4C0266B15E2001A5352 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
-		195AE4C2266B1975001A5352 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		195AE4CB266B1DC6001A5352 /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 		195AE4CE266B26E4001A5352 /* SearchRecentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecentCell.swift; sourceTree = "<group>"; };
 		195AE4D0266B26EA001A5352 /* SearchRecentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRecentCell.xib; sourceTree = "<group>"; };
@@ -324,7 +325,11 @@
 		19EA904626634B1E00F280A2 /* GeneralConeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConeView.swift; sourceTree = "<group>"; };
 		19EA904826634B2400F280A2 /* GeneralConeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralConeView.xib; sourceTree = "<group>"; };
 		19EA904A2663AB6C00F280A2 /* CGFloatExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtensions.swift; sourceTree = "<group>"; };
+		6B0C989626949BCE004331F9 /* PushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushManager.swift; sourceTree = "<group>"; };
+		6B0C989726949BF2004331F9 /* AppDelegate+Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Push.swift"; sourceTree = "<group>"; };
+		6B0C989A26949DFB004331F9 /* TooniTooni.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TooniTooni.entitlements; sourceTree = "<group>"; };
 		6B73ADB72691889700756342 /* WebtoonWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonWebViewController.swift; sourceTree = "<group>"; };
+		6BB013172694A637009BE240 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DCB1D1CF57D86EDE346198F6 /* Pods_TooniTooni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TooniTooni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -474,27 +479,20 @@
 		19B1B468262425760016F195 /* TooniTooni */ = {
 			isa = PBXGroup;
 			children = (
+				6B0C989A26949DFB004331F9 /* TooniTooni.entitlements */,
+				6B0C989326949B6A004331F9 /* Core */,
+				6B0C989526949B84004331F9 /* Managers */,
 				19CA7136265B6D9D0095BE24 /* Network */,
 				19BFA5362637C9D500C6B82E /* Cells */,
 				194D7A412625462B00BEEF1C /* Views */,
 				19B1B4902624264B0016F195 /* Extensions */,
+				6B0C989226949B49004331F9 /* ViewControllers */,
 				19B1B488262425CE0016F195 /* Models */,
-				19B1B469262425760016F195 /* AppDelegate.swift */,
-				19B1B495262426AF0016F195 /* GeneralHelper.swift */,
-				19B1B48D2624263E0016F195 /* Constants.swift */,
-				19B1B46B262425760016F195 /* SceneDelegate.swift */,
-				194D7A34262543AC00BEEF1C /* Splash */,
-				19B1B4AE2624289E0016F195 /* Home */,
-				195AE4BD266B15D1001A5352 /* Search */,
-				19B1B4AD262428950016F195 /* Week */,
-				19B1B4AC2624288E0016F195 /* Favorite */,
-				19B1B4AB262428830016F195 /* Settings */,
-				19EA901F26623BAE00F280A2 /* Webtoon */,
 				19B1B472262425770016F195 /* Assets.xcassets */,
 				19B1B474262425770016F195 /* LaunchScreen.storyboard */,
 				19B1B477262425770016F195 /* Info.plist */,
 				19183197267384F400B5CCED /* splash_animation.gif */,
-				195AE4C2266B1975001A5352 /* GoogleService-Info.plist */,
+				6BB013172694A637009BE240 /* GoogleService-Info.plist */,
 				19CA7129265B6ACC0095BE24 /* Utilities */,
 				19B1B47E2624258D0016F195 /* Base */,
 			);
@@ -796,6 +794,40 @@
 			path = Webtoon;
 			sourceTree = "<group>";
 		};
+		6B0C989226949B49004331F9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				194D7A34262543AC00BEEF1C /* Splash */,
+				19B1B4AE2624289E0016F195 /* Home */,
+				195AE4BD266B15D1001A5352 /* Search */,
+				19B1B4AD262428950016F195 /* Week */,
+				19B1B4AC2624288E0016F195 /* Favorite */,
+				19B1B4AB262428830016F195 /* Settings */,
+				19EA901F26623BAE00F280A2 /* Webtoon */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6B0C989326949B6A004331F9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				19B1B469262425760016F195 /* AppDelegate.swift */,
+				6B0C989726949BF2004331F9 /* AppDelegate+Push.swift */,
+				19B1B46B262425760016F195 /* SceneDelegate.swift */,
+				19B1B48D2624263E0016F195 /* Constants.swift */,
+				19B1B495262426AF0016F195 /* GeneralHelper.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		6B0C989526949B84004331F9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				6B0C989626949BCE004331F9 /* PushManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		C13235123DB2C5C93B6A4429 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -878,7 +910,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				19B1B476262425770016F195 /* LaunchScreen.storyboard in Resources */,
-				195AE4C3266B1975001A5352 /* GoogleService-Info.plist in Resources */,
 				19EA900F26620EFA00F280A2 /* GeneralMenuCell.xib in Resources */,
 				19BFA59626380F3100C6B82E /* GeneralGenreView.xib in Resources */,
 				19183143266FD1D900B5CCED /* SettingsHeaderView.xib in Resources */,
@@ -895,6 +926,7 @@
 				195AE4D1266B26EA001A5352 /* SearchRecentCell.xib in Resources */,
 				19EA900126620C7600F280A2 /* HomeNoticeCell.xib in Resources */,
 				19B1B4A3262428710016F195 /* Favorite.storyboard in Resources */,
+				6BB013182694A637009BE240 /* GoogleService-Info.plist in Resources */,
 				194D7A36262543B400BEEF1C /* Splash.storyboard in Resources */,
 				191831A22673BF1100B5CCED /* CustomActivity.xib in Resources */,
 				195AE4E8266CF7C2001A5352 /* SearchNoneFooterView.xib in Resources */,
@@ -1003,6 +1035,7 @@
 				19CA7140265B6DAE0095BE24 /* NetworkService.swift in Sources */,
 				19EA902326623BC700F280A2 /* WebtoonDetailViewController.swift in Sources */,
 				19BFA5692637FE0800C6B82E /* HomeNewListCell.swift in Sources */,
+				6B0C989826949BF2004331F9 /* AppDelegate+Push.swift in Sources */,
 				195AE4EA266D0EF2001A5352 /* SearchHeaderView.swift in Sources */,
 				19BFA5472637D98D00C6B82E /* WeekWebtoonCell.swift in Sources */,
 				19EA90402662AA4C00F280A2 /* CommentItem.swift in Sources */,
@@ -1021,6 +1054,7 @@
 				195AE4F4266DCD00001A5352 /* ResponseItem.swift in Sources */,
 				19EA90382662963800F280A2 /* GeneralCloverView.swift in Sources */,
 				19BFA52D2637B61D00C6B82E /* WeekMenuView.swift in Sources */,
+				6B0C989926949C16004331F9 /* PushManager.swift in Sources */,
 				19BFA5412637D76E00C6B82E /* WeekListViewController.swift in Sources */,
 				19EA903C2662A78C00F280A2 /* WebtoonDetailCommentCell.swift in Sources */,
 				195AE4E3266CF538001A5352 /* RandomItem.swift in Sources */,
@@ -1186,19 +1220,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CODE_SIGN_ENTITLEMENTS = TooniTooni/TooniTooni.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CNMQE42DQF;
 				INFOPLIST_FILE = TooniTooni/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toonitooni.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = TooniTooni_Dev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1209,19 +1244,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CODE_SIGN_ENTITLEMENTS = TooniTooni/TooniTooni.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CNMQE42DQF;
 				INFOPLIST_FILE = TooniTooni/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toonitooni.prod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = TooniTooni_Prod;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

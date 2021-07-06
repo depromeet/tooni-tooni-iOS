@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Firebase
     FirebaseApp.configure()
 
+    PushManager.shared.setup()
+
     return true
   }
 
